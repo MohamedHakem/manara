@@ -34,3 +34,71 @@ export const wordmarkSVG = `<svg
     />
   </g>
 </svg>`;
+
+export const tracks = [
+  {
+    id: 1,
+    title: 'AWS 1: Intro to Cloud Computing',
+    slug: '/aws-1'
+  },
+  {
+    id: 2,
+    title: 'AWS 2: Becoming a Solutions Architect',
+    slug: '/aws-2'
+  },
+  {
+    id: 3,
+    title: 'AWS 3: Become an AWS developer',
+    slug: '/aws-3'
+  },
+  {
+    id: 4,
+    title: 'Land a Job at a Global Tech Company',
+    slug: '/how-to-land-a-job-at-a-global-tech-company'
+  },
+  {
+    id: 5,
+    title: 'Job Hunting Best Practices',
+    slug: '/job-hunting-best-practices'
+  },
+  {
+    id: 6,
+    title: 'System Design and Archeticture',
+    slug: '/system-design-archeticture'
+  },
+  {
+    id: 7,
+    title: 'Intro to Gen AI and Prompt Engineering',
+    slug: '/intro-to-gen-ai-and-prompt-engineering'
+  },
+  {
+    id: 8,
+    title: 'Frontend Engineering with React',
+    slug: '/frontend-engineering-with-react'
+  },
+  {
+    id: 9,
+    title: 'Backend with Nodejs',
+    slug: '/backend-with-nodejs'
+  },
+  {
+    id: 10,
+    title: 'Databases',
+    slug: '/databases'
+  },
+  {
+    id: 11,
+    title: 'Data Engineering',
+    slug: '/data-engineering'
+  },
+  {
+    id: 12,
+    title: 'DevOps',
+    slug: '/devops'
+  },
+  {
+    id: 13,
+    title: 'Data Analytics with Python',
+    slug: '/data-analytics-with-python'
+  }
+];
