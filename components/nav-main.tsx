@@ -27,7 +27,7 @@ export function NavMain({
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild>
-                <a href={item.url}>
+                <a href={item.url} target={item.itemType === "external" ? "_blank" : ""} >
                   <item.icon />
                   <span>{item.title}</span>
                   <div className="ml-auto">{!!item.itemType ? <SquareArrowOutUpRight size={14} color="#787878" /> : null}</div>

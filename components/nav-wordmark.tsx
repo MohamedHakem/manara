@@ -6,13 +6,11 @@ import { Candy, Home, LayoutGrid, Type } from "lucide-react";
 import { useParams } from "next/navigation";
 import { MouseEvent, useCallback, useState } from "react";
 import { toast } from "sonner";
-// import { useToast } from "@/hooks/use-toast"
 import { Button, ButtonProps } from "@/components/ui/button";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Logo } from "@/components/Logo";
 import { Wordmark } from "@/components/wordmark";
 import { logoSVG, wordmarkSVG } from "@/lib/constants";
-// import { NavContext } from "@/components/nav";
 
 /**
  * The Manara logo with a custom context menu for copying/navigation,
@@ -86,7 +84,6 @@ export function NavWordmark({
               text="Copy Logo as SVG"
               variant="outline"
               onClick={() => copy(logoSVG)}
-              // DefaultIcon={<Logo className="h-4 w-4" />}
               DefaultIcon={Logo}
               HoverIcon={Logo}
             />
@@ -94,7 +91,6 @@ export function NavWordmark({
               text="Copy Wordmark as SVG"
               variant="outline"
               onClick={() => copy(wordmarkSVG)}
-              // DefaultIcon={<Type strokeWidth={2} className="h-4 w-4" />}
               DefaultIcon={Type}
               HoverIcon={Type}
             />
@@ -109,7 +105,6 @@ export function NavWordmark({
                     "_blank",
                   )
                 }
-                // icon={<Home strokeWidth={2} className="h-4 w-4" />}
                 DefaultIcon={Home}
                 HoverIcon={Home}
               />
@@ -118,7 +113,6 @@ export function NavWordmark({
                 text="Dashboard"
                 variant="outline"
                 onClick={() => window.open("https://app.manara.tech", "_blank")}
-                // icon={<LayoutGrid strokeWidth={2} className="h-4 w-4" />}
                 DefaultIcon={LayoutGrid}
                 HoverIcon={LayoutGrid}
               />

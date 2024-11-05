@@ -1,8 +1,6 @@
-// import { cn } from "@/lib/utils";
 import { SquareArrowOutUpRight, type LucideIcon } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
 
-// import { ContentLinkCard } from "@/components/link-card";
 import {
   SidebarGroup,
   SidebarGroupContent,
