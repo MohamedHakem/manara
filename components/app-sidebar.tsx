@@ -43,7 +43,7 @@ const data = {
     },
     {
       title: "Connect",
-      url: "https://thisismanara.cicle.so",
+      url: "https://thisismanara.circle.so",
       itemType: "external",
       icon: Users,
     },
