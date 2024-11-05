@@ -63,12 +63,12 @@ export const tracks = [
   },
   {
     id: 6,
-    title: 'System Design and Archeticture',
-    slug: '/system-design-archeticture'
+    title: 'System Design and Architecture',
+    slug: '/system-design-architecture'
   },
   {
     id: 7,
-    title: 'Intro to Gen AI and Prompt Engineering',
+    title: 'Intro to Gen AI & Prompt Engineering',
     slug: '/intro-to-gen-ai-and-prompt-engineering'
   },
   {
