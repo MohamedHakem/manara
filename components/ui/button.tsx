@@ -83,8 +83,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? <LoadingSpinner /> : null}
         <div className="group cursor-pointer flex">
-          {DefaultIcon ? <DefaultIcon className={`block ${HoverIcon ? "group-hover:hidden" : ""} h-6 w-6 text-gray-500`} /> : null}
-          {HoverIcon ? <HoverIcon className="hidden group-hover:block h-6 w-6 text-gray-700" /> : null}
+          {DefaultIcon ?
+            <DefaultIcon
+              className={`block mr-0 transition-all ease-in-out duration-300 group-hover:translate-x-[-8px] ${HoverIcon ? "group-hover:hidden" : ""} h-6 w-6 text-gray-500`}
+            />
+            : null
+          }
+          {HoverIcon ? <HoverIcon
+            className="hidden group-hover:block h-6 w-6 text-gray-700"
+          />
+            : null
+          }
           {text && <div className={cn("min-w-0 truncate")}>{text}</div>}
         </div>
       </Comp>

@@ -13,7 +13,7 @@ export default function BackButton() {
       variant="outline"
       size="default"
       DefaultIcon={ChevronLeft}
-      className={"h-8 w-8 border-0 mx-1 p-0 [&_svg]:size-5"}
+      className={"w-fit h-8 border-0 p-2 pr-3 md:p-3 md:pr-4 [&_svg]:size-5"}
       onClick={() => back()}
     />
   )
