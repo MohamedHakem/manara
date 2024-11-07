@@ -83,6 +83,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar variant="inset" {...props} className="the-AppSidebar-component">
       <SidebarHeader>
         <Link
+          prefetch={true}
           href={"/"}
           className={cn(
             "rounded-md px-2 outline-none transition-opacity focus-visible:ring-2 focus-visible:ring-ring",

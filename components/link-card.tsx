@@ -27,7 +27,7 @@ export function ContentLinkCard({
   itemIndex: number;
 } & ComponentProps<typeof Link>) {
   return (
-    <Link className={cn("group", contentLinkCardClassName, className)} {...rest}>
+    <Link prefetch={true} className={cn("group", contentLinkCardClassName, className)} {...rest}>
       <div className="flex items-center justify-between gap-3">
         {icon}
         <div className="flex-1">

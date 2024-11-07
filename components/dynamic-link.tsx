@@ -12,12 +12,14 @@ export default function DynamicLink({
   href,
   className,
   key,
+  prefetch = true,
   includePathname = false
 }: {
   children?: ReactNode,
   href: string,
   className?: string,
   key?: Key,
+  prefetch?: boolean,
   includePathname?: boolean
 }) {
   const pathname = usePathname()
@@ -27,7 +29,7 @@ export default function DynamicLink({
     : href // pass href as is, normal root-based or absolute url behavior
 
   return (
-    <Link key={key} href={finalHref} className={className}>
+    <Link prefetch={prefetch} key={key} href={finalHref} className={className}>
       {children}
     </Link>
   )

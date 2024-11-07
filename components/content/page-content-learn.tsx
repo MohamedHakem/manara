@@ -8,7 +8,7 @@ export default function PageContentLearn() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-8 pb-2 px-6 md:px-4 w-full max-w-[52rem] mx-auto">
       {tracks.map((track) => (
-        <Link key={track.id} href={`/learn/track/${track.slug}`} className="block h-full rounded-xl focus:outline-none focus:outline-orange-300 focus:outline-dashed focus:outline-2 focus:outline-offset-2">
+        <Link prefetch={true} key={track.id} href={`/learn/track/${track.slug}`} className="block h-full rounded-xl focus:outline-none focus:outline-orange-300 focus:outline-dashed focus:outline-2 focus:outline-offset-2">
           <Card className="h-full min-h-[236px] md:min-h-max hover:bg-muted/50 p-0 flex flex-col shadow-sm aspect-auto overflow-hidden">
             <CardContent className={cn("flex-1 p-0 md:max-h-[137px] relative aspect-264/137 h-auto",
               track.bgColor ? `bg-[${track.bgColor}]` : "bg-[#eee]")}
