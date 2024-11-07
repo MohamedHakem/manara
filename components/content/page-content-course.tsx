@@ -30,6 +30,7 @@ export default function PageContentCourse({ slug }: { slug: string }) {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     quality={65}
                     decoding="sync"
+                    loading="eager"
                   />
                   : null
                 }
