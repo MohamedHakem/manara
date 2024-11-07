@@ -66,6 +66,9 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
+      },
+      aspectRatio: {
+        '264/137': '264 / 137'
       }
     }
   },

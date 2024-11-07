@@ -26,22 +26,7 @@ export function NavSecondary({
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size="sm">
-                {/* <ContentLinkCard
-                  key={item.title}
-                  href={item.url}
-                  itemIndex={index}
-                  icon={
-                    <item.icon
-                      className={cn(
-                        "h-5 w-5 shrink-0 text-gray-600 transition-colors dark:text-white/60"
-                      )}
-                    />
-                  }
-                  title={item.title}
-                  showArrow
-                /> */}
-
+              <SidebarMenuButton asChild size="default">
                 <a href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>

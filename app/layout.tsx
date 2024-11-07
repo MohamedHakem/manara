@@ -1,9 +1,9 @@
+import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import { Toaster } from "sonner";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +33,9 @@ export default function RootLayout({
       >
         <SidebarProvider className="the-SidebarProvider-component">
           <AppSidebar />
-          {children}
+          <SidebarInset className="md:border md:border-neutral-200/80 max-h-[calc(100svh-theme(spacing.4))] overflow-auto">
+            {children}
+          </SidebarInset>
         </SidebarProvider>
         <Toaster />
       </body>

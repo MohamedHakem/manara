@@ -39,17 +39,23 @@ export const tracks = [
   {
     id: 1,
     title: 'AWS 1: Intro to Cloud Computing',
-    slug: 'aws-1'
+    slug: 'aws-1',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
   },
   {
     id: 2,
     title: 'AWS 2: Becoming a Solutions Architect',
-    slug: 'aws-2'
+    slug: 'aws-2',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
   },
   {
     id: 3,
     title: 'AWS 3: Become an AWS developer',
-    slug: 'aws-3'
+    slug: 'aws-3',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
   },
   {
     id: 4,
@@ -100,5 +106,122 @@ export const tracks = [
     id: 13,
     title: 'Data Analytics with Python',
     slug: 'data-analytics-with-python'
+  }
+];
+
+export const coursesByTrack = [
+  {
+    id: 1,
+    title: 'AWS 1: Intro to Cloud Computing',
+    slug: 'course-1',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 2,
+    title: 'AWS 2: Becoming a Solutions Architect',
+    slug: 'course-2',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 3,
+    title: 'AWS 3: Become an AWS developer',
+    slug: 'course-3',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 4,
+    title: 'Land a Job at a Global Tech Company',
+    slug: 'course-4'
+  },
+  {
+    id: 5,
+    title: 'Job Hunting Best Practices',
+    slug: 'course-5'
+  },
+  {
+    id: 6,
+    title: 'System Design and Architecture',
+    slug: 'course-6'
+  }
+];
+
+export const modulesByCourse = [
+  {
+    id: 1,
+    title: 'AWS 1: Intro to Cloud Computing',
+    slug: 'module-1',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 2,
+    title: 'AWS 2: Becoming a Solutions Architect',
+    slug: 'module-2',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 3,
+    title: 'AWS 3: Become an AWS developer',
+    slug: 'module-3',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 4,
+    title: 'Land a Job at a Global Tech Company',
+    slug: 'module-4'
+  },
+  {
+    id: 5,
+    title: 'Job Hunting Best Practices',
+    slug: 'module-5'
+  },
+  {
+    id: 6,
+    title: 'System Design and Architecture',
+    slug: 'module-6'
+  }
+];
+
+export const lessonsByModule = [
+  {
+    id: 1,
+    title: 'AWS 1: Intro to Cloud Computing',
+    slug: 'lesson-1',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 2,
+    title: 'AWS 2: Becoming a Solutions Architect',
+    slug: 'lesson-2',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 3,
+    title: 'AWS 3: Become an AWS developer',
+    slug: 'lesson-3',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c'
+  },
+  {
+    id: 4,
+    title: 'Land a Job at a Global Tech Company',
+    slug: 'lesson-4'
+  },
+  {
+    id: 5,
+    title: 'Job Hunting Best Practices',
+    slug: 'lesson-5'
+  },
+  {
+    id: 6,
+    title: 'System Design and Architecture',
+    slug: 'lesson-6'
   }
 ];

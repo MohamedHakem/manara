@@ -5,6 +5,7 @@ import {
   Chrome,
   GraduationCap,
   Headset,
+  Home,
   NotebookPen,
   Send,
   Users
@@ -32,8 +33,13 @@ const data = {
   },
   navMain: [
     {
+      title: "Home",
+      url: "/",
+      icon: Home,
+    },
+    {
       title: "Learn",
-      url: "#",
+      url: "/learn",
       icon: NotebookPen,
     },
     {
@@ -90,7 +96,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="py-[0.1rem] px-[0.7rem]">
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>

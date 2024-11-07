@@ -41,7 +41,7 @@ export function NavUser({
   const { isMobile } = useSidebar()
 
   return (
-    <SidebarMenu>
+    <SidebarMenu className="p-1 border border-[#e0e0e0] rounded-md">
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -55,7 +55,7 @@ export function NavUser({
               </Avatar>
               <div className="flex gap-1 flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold text-ellipsis overflow-hidden max-w-[60px]">{user.name}</span>
-                <span className="truncate text-xs text-ellipsis overflow-hidden max-w-[74px]">({user.email})</span>
+                <span className="truncate text-xs text-ellipsis overflow-hidden max-w-[89px]">({user.email})</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
