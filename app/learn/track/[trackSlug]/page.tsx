@@ -10,7 +10,8 @@ export async function generateStaticParams() {
 }
 
 // the landing page of the track, all courses listed, click one to go to /track/{slug}/course/{course}
-export default function LearningPathPage({ params }: { params: { trackSlug: string } }) {
+export default async function LearningPathPage(props: { params: Promise<{ trackSlug: string }> }) {
+  const params = await props.params;
   const { trackSlug } = params;
 
   return (
