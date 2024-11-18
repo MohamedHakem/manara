@@ -1,4 +1,4 @@
-import DynamicLink from "@/components/dynamic-link"
+import DynamicLink from "@/components/ui/dynamic-link"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { lessonsByModule } from "@/lib/constants"
 import { cn } from "@/lib/utils"

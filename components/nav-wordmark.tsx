@@ -1,31 +1,34 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import * as Popover from "@radix-ui/react-popover";
-import { Candy, Home, LayoutGrid, Type } from "lucide-react";
-import { useParams } from "next/navigation";
-import { MouseEvent, useCallback, useState } from "react";
-import { toast } from "sonner";
-import { Button, ButtonProps } from "@/components/ui/button";
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-import { Logo } from "@/components/Logo";
-import { Wordmark } from "@/components/wordmark";
-import { logoSVG, wordmarkSVG } from "@/lib/constants";
+import { cn } from '@/lib/utils';
+import * as Popover from '@radix-ui/react-popover';
+import { Candy, Home, LayoutGrid, Type } from 'lucide-react';
+// import { useParams } from 'next/navigation';
+import { MouseEvent, useCallback, useState } from 'react';
+import { toast } from 'sonner';
+import { Button, ButtonProps } from '@/components/ui/button';
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+import { Logo } from '@/components/Logo';
+import { Wordmark } from '@/components/wordmark';
+import { logoSVG, wordmarkSVG } from '@/lib/constants';
 
 /**
  * The Manara logo with a custom context menu for copying/navigation,
  * for use in the top site nav
  */
+
 export function NavWordmark({
-  variant = "full",
+  variant = 'full',
   isInApp,
-  className,
+  isDrawer,
+  className
 }: {
-  variant?: "full" | "symbol";
+  variant?: 'full' | 'symbol';
   isInApp?: boolean;
+  isDrawer?: boolean;
   className?: string;
 }) {
-  const { domain = "manara.tech" } = useParams() as { domain: string };
+  // const { domain = 'manara.tech' } = useParams() as { domain: string };
 
   // const { toast } = useToast()
   // const { theme } = useContext(NavContext);
@@ -41,27 +44,22 @@ export function NavWordmark({
 
   function copy(text: string) {
     toast.promise(copyToClipboard(text), {
-      success: "Copied to clipboard!",
-      error: "Failed to copy to clipboard",
+      success: 'Copied to clipboard!',
+      error: 'Failed to copy to clipboard'
     });
   }
 
   return (
     <Popover.Root open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <Popover.Anchor asChild>
-        <div onClick={handleOnClick} className="max-w-full">
-          {variant === "full" ? (
-            <div className="flex justify-between items-center">
+        <div onClick={handleOnClick} className="w-full max-w-full">
+          {variant === 'full' ? (
+            <div className={cn('flex justify-between items-center cursor-pointer', isDrawer ? "border rounded-lg py-2 px-3" : "")}>
               <Wordmark className={className} />
-              <Candy size={14} color={"orange"} />
+              <Candy size={14} color={'orange'} />
             </div>
           ) : (
-            <Logo
-              className={cn(
-                "h-8 w-8 transition-all duration-75 active:scale-95",
-                className,
-              )}
-            />
+            <Logo className={cn('h-8 w-8 transition-all duration-75 active:scale-95', className)} />
           )}
         </div>
       </Popover.Anchor>
@@ -70,8 +68,8 @@ export function NavWordmark({
           sideOffset={14}
           align="start"
           className={cn(
-            "z-50 -mt-1.5",
-            !isInApp && "-translate-x-8",
+            'z-50 -mt-1.5',
+            !isInApp && '-translate-x-8'
             // theme === "dark" && "dark",
           )}
           onClick={(e) => {
@@ -94,29 +92,22 @@ export function NavWordmark({
               DefaultIcon={Type}
               HoverIcon={Type}
             />
-            {/* If it's in the app or it's a domain placeholder page (not dub.co homepage), show the home button */}
-            {isInApp || domain != "manara.tech" ? (
-              <ContextMenuButton
-                text="Home Page"
-                variant="outline"
-                onClick={() =>
-                  window.open(
-                    `https://manara.tech${isInApp ? "/" : ""}`,
-                    "_blank",
-                  )
-                }
-                DefaultIcon={Home}
-                HoverIcon={Home}
-              />
-            ) : (
-              <ContextMenuButton
-                text="Dashboard"
-                variant="outline"
-                onClick={() => window.open("https://app.manara.tech", "_blank")}
-                DefaultIcon={LayoutGrid}
-                HoverIcon={LayoutGrid}
-              />
-            )}
+            {/* If it's in the app or it's a domain placeholder page (not manara.tech homepage), show the home button */}
+            {/* {isInApp || domain != 'manara.tech' ? ( */}
+            <ContextMenuButton
+              text="Dashboard"
+              variant="outline"
+              onClick={() => window.open(isInApp ? '/' : 'https://app.manara.tech', '_self')}
+              DefaultIcon={LayoutGrid}
+              HoverIcon={LayoutGrid}
+            />
+            <ContextMenuButton
+              text="Home Page"
+              variant="outline"
+              onClick={() => window.open(`https://manara.tech/`, '_blank')}
+              DefaultIcon={Home}
+              HoverIcon={Home}
+            />
           </div>
         </Popover.Content>
       </Popover.Portal>
@@ -127,9 +118,10 @@ export function NavWordmark({
 function ContextMenuButton({ className, ...rest }: ButtonProps) {
   return (
     <Button
+      isWordmark
       className={cn(
-        "h-9 justify-start px-3 border-0 font-medium hover:text-gray-700 dark:text-white/70 dark:hover:bg-white/[0.15] dark:hover:text-white",
-        className,
+        'h-9 justify-start px-3 border-0 font-medium hover:text-gray-700 dark:text-white/70 dark:hover:bg-white/[0.15] dark:hover:text-white',
+        className
       )}
       {...rest}
     />

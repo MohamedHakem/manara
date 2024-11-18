@@ -1,4 +1,4 @@
-import PageContent from "@/components/page-content";
+import PageContent from "@/components/content/content-page";
 import PageHeader from "@/components/page-header";
 import { tracks } from "@/lib/constants"; // replace with courses based on track id/slug
 
@@ -26,7 +26,7 @@ export default async function CoursePage(props: { params: Promise<{ lessonSlug: 
       */}
       {/* example: PageContent type={"track"} slug={slug} */}
 
-      <PageContent type={"module"} slug={lessonSlug} />
+      <PageContent type={"lesson"} slug={lessonSlug} />
     </>
   );
 }

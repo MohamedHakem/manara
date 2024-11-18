@@ -1,18 +1,8 @@
-"use client"
+'use client';
 
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  LogOut,
-  Settings
-} from "lucide-react"
+import { BadgeCheck, Bell, ChevronsUpDown, LogOut, Settings } from 'lucide-react';
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,49 +10,58 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
-} from "@/components/ui/sidebar"
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/components/ui/sidebar';
+import { cn } from '@/lib/utils';
 
 export function NavUser({
   user,
+  showTitleEmail = true,
+  isDrawer = false,
+  className
 }: {
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
+    name: string;
+    email: string;
+    avatar: string;
+  };
+  showTitleEmail?: boolean;
+  mobileBottomNav?: boolean;
+  isDrawer?: boolean
+  className?: string;
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile } = useSidebar();
 
   return (
-    <SidebarMenu className="p-1 border border-[#e0e0e0] rounded-md">
+    <SidebarMenu className={cn('p-1', className)}>
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent py-1 h-8 data-[state=open]:text-sidebar-accent-foreground"
+              className={cn("data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground", isDrawer ? "py-4 h-12" : "py-1 h-8")}
             >
-              <Avatar className="h-6 w-6 rounded-full">
+              <Avatar className={cn("rounded-full", isDrawer ? "h-10 w-10" : "h-6 w-6")}>
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback className="rounded-lg">MH</AvatarFallback>
               </Avatar>
-              <div className="flex gap-1 flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold text-ellipsis overflow-hidden max-w-[60px]">{user.name}</span>
-                <span className="truncate text-xs text-ellipsis overflow-hidden max-w-[89px]">({user.email})</span>
-              </div>
-              <ChevronsUpDown className="ml-auto size-4" />
+              {showTitleEmail ? (
+                <>
+                  <div className={cn("flex gap-1 flex-1 text-left items-center", isDrawer ? "text-base" : "text-sm leading-tight")}>
+                    <span className="truncate font-semibold text-ellipsis overflow-hidden max-w-[60px]">
+                      {user.name}
+                    </span>
+                    <span className="truncate text-xs text-ellipsis overflow-hidden max-w-[89px]">({user.email})</span>
+                  </div>
+                  <ChevronsUpDown className="ml-auto size-4" />
+                </>
+              ) : null}
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
-            side={isMobile ? "bottom" : "right"}
+            side={isMobile ? 'bottom' : 'right'}
             align="end"
             sideOffset={4}
           >
@@ -104,5 +103,5 @@ export function NavUser({
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
+  );
 }

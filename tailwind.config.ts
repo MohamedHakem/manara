@@ -1,14 +1,21 @@
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import fluid, { extract, screens, fontSize } from 'fluid-tailwind';
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}'
-  ],
+  content: {
+    files: [
+      './pages/**/*.{js,ts,jsx,tsx,mdx}',
+      './components/**/*.{js,ts,jsx,tsx,mdx}',
+      './app/**/*.{js,ts,jsx,tsx,mdx}'
+    ],
+    extract
+  },
   theme: {
+    screens,
+    fontSize,
     extend: {
       colors: {
         background: 'hsl(var(--background))',
@@ -65,14 +72,21 @@ const config: Config = {
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
+        sm: 'calc(var(--radius) - 4px)',
+        '4xl': '1.75rem', // 28px
+        '5xl': '2rem'
       },
       aspectRatio: {
         '264/137': '264 / 137'
+      },
+      screens: {
+        '3xl': '1700px',
+        '4xl': '1920px',
+        '5xl': '2200px',
+        '6xl': '2560px'
       }
     }
   },
-  // plugins: [require("tailwindcss-animate")],
-  plugins: [tailwindcssAnimate]
+  plugins: [tailwindcssAnimate, fluid, typography]
 };
 export default config;

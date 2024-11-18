@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@number-flow/react": "^0.3.0",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -23,21 +24,25 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",
-    "next": "^15.0.3-canary.9",
+    "next": "^15.0.3",
     "next-themes": "^0.4.3",
     "nuqs": "^2.1.1",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react": "^19.0.0-rc-5c56b873-20241107",
+    "react-dom": "^19.0.0-rc-5c56b873-20241107",
     "sonner": "^1.7.0",
+    "swapy": "^0.4.2",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^20",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "^15.0.3",
+    "fluid-tailwind": "^1.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

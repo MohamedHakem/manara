@@ -24,10 +24,12 @@ export default function DynamicLink({
 }) {
   const pathname = usePathname()
 
-  const finalHref = includePathname ?
-    getRelativeHref(pathname, href) // get the relative pathname, add href to it, clean any duplicates
-    : href // pass href as is, normal root-based or absolute url behavior
-
+  const finalHref: string = includePathname ?
+  getRelativeHref(pathname, href) // get the relative pathname, add href to it, clean any duplicates
+  : href // pass href as is, normal root-based or absolute url behavior
+  
+  // console.log("🚀 ~ finalHref:", finalHref)
+  
   return (
     <Link prefetch={prefetch} key={key} href={finalHref} className={className}>
       {children}

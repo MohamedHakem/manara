@@ -1,16 +1,20 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import type { Metadata } from "next";
-import { Toaster } from "sonner";
-import "./globals.css";
+// import { Geist } from 'next/font/google';
+import { AppSidebar } from '@/components/app-sidebar';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
+import MobileBottomNav from '@/components/mobile-bottom-nav';
+import type { Metadata } from 'next';
+import { Toaster } from 'sonner';
+import './globals.css';
+
+// const geistSans = Geist();
 
 export const metadata: Metadata = {
-  title: "Manara Tech - concept",
-  description: "By Hakem",
+  title: 'Manara Tech - concept',
+  description: 'By Hakem'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -22,6 +26,7 @@ export default function RootLayout({
           <SidebarInset className="md:border md:border-neutral-200/80 max-h-[calc(100svh-theme(spacing.4))] overflow-auto">
             {children}
           </SidebarInset>
+        <MobileBottomNav />
         </SidebarProvider>
         <Toaster />
       </body>

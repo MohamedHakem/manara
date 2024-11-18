@@ -1,4 +1,4 @@
-import PageContent from "@/components/page-content";
+import PageContent from "@/components/content/content-page";
 import PageHeader from "@/components/page-header";
 import { tracks } from "@/lib/constants"; // replace with courses based on track id/slug
 

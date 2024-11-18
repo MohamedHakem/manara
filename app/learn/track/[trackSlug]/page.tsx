@@ -1,4 +1,4 @@
-import PageContent from "@/components/page-content";
+import PageContent from "@/components/content/content-page";
 import PageHeader from "@/components/page-header";
 import { tracks } from "@/lib/constants";
 
@@ -26,6 +26,7 @@ export default async function LearningPathPage(props: { params: Promise<{ trackS
       */}
       {/* example: PageContent type={"track"} slug={slug} */}
 
+      {/* <PageContent type={"track"} slug={trackSlug} /> */}
       <PageContent type={"track"} slug={trackSlug} />
     </>
   );

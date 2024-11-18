@@ -41,110 +41,305 @@ export const tracks = [
     title: 'AWS 1: Intro to Cloud Computing',
     slug: 'aws-1',
     thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 2,
     title: 'AWS 2: Becoming a Solutions Architect',
     slug: 'aws-2',
     thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 3,
     title: 'AWS 3: Become an AWS developer',
     slug: 'aws-3',
     thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 4,
     title: 'Land a Job at a Global Tech Company',
-    slug: 'how-to-land-a-job-at-a-global-tech-company'
+    slug: 'how-to-land-a-job-at-a-global-tech-company',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 5,
     title: 'Job Hunting Best Practices',
-    slug: 'job-hunting-best-practices'
+    slug: 'job-hunting-best-practices',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 6,
     title: 'System Design and Architecture',
-    slug: 'system-design-architecture'
+    slug: 'system-design-architecture',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 7,
     title: 'Intro to Gen AI & Prompt Engineering',
-    slug: 'intro-to-gen-ai-and-prompt-engineering'
+    slug: 'intro-to-gen-ai-and-prompt-engineering',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 8,
     title: 'Frontend Engineering with React',
-    slug: 'frontend-engineering-with-react'
+    slug: 'frontend-engineering-with-react',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 9,
     title: 'Backend with Nodejs',
-    slug: 'backend-with-nodejs'
+    slug: 'backend-with-nodejs',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 10,
     title: 'Databases',
-    slug: 'databases'
+    slug: 'databases',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 11,
     title: 'Data Engineering',
-    slug: 'data-engineering'
+    slug: 'data-engineering',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 12,
     title: 'DevOps',
-    slug: 'devops'
+    slug: 'devops',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   },
   {
     id: 13,
     title: 'Data Analytics with Python',
-    slug: 'data-analytics-with-python'
+    slug: 'data-analytics-with-python',
+    thumbImg: 'aws-thumb-1.jpg',
+    bgColor: '#252f3c',
+    progress: 40,
+    totalItems: 10,
+    completedItems: 4
   }
 ];
 
 export const coursesByTrack = [
   {
     id: 1,
-    title: 'AWS 1: Intro to Cloud Computing',
+    title: 'AWS-01 Cloud Computing Fundamentals and Concepts',
     slug: 'course-1',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#eafdf1',
+    totalItems: 4,
+    completedItems: 4,
+    estimatedHours: 4
   },
   {
     id: 2,
-    title: 'AWS 2: Becoming a Solutions Architect',
+    title: 'AWS-02 AWS Core Services [EC2 Instances]',
     slug: 'course-2',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#eafdf1',
+    totalItems: 4,
+    completedItems: 4,
+    estimatedHours: 4
   },
   {
     id: 3,
-    title: 'AWS 3: Become an AWS developer',
+    title: 'AWS-03 Elastic Load Balancing & Auto-Scaling Groups',
     slug: 'course-3',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#eafdf1',
+    totalItems: 4,
+    completedItems: 4,
+    estimatedHours: 4
   },
   {
     id: 4,
-    title: 'Land a Job at a Global Tech Company',
-    slug: 'course-4'
+    title: 'AWS-04 Virtual Private Cloud Fundamentals',
+    slug: 'course-4',
+    bgColor: '#eafdf1',
+    totalItems: 4,
+    completedItems: 4,
+    estimatedHours: 4
   },
   {
     id: 5,
-    title: 'Job Hunting Best Practices',
-    slug: 'course-5'
+    title: 'AWS-05 Amazon S3',
+    slug: 'course-5',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
   },
   {
     id: 6,
-    title: 'System Design and Architecture',
-    slug: 'course-6'
+    title: 'AWS-06 Database Fundamentals',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
+  },
+  {
+    id: 7,
+    title: 'AWS-07 Security and Compliance',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
+  },
+  {
+    id: 8,
+    title: 'AWS-08 Cloud Technology and Services',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
+  },
+  {
+    id: 9,
+    title: 'AWS-09 Billing, Pricing, and Support',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
+  },
+  {
+    id: 10,
+    title: 'AWS-10 Further AWS Services',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 4,
+    estimatedHours: 4
+  },
+  {
+    id: 11,
+    title: 'AWS Cloud Computing Mock Exam 1',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 12,
+    title: 'AWS Cloud Computing Mock Exam 2',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 13,
+    title: 'AWS Cloud Computing Mock Exam 3',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 14,
+    title: 'AWS Cloud Computing Mock Exam 4',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 15,
+    title: 'AWS-11 Exam Registration and Voucher Information',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 16,
+    title: 'Voucher & Exam Quiz',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 17,
+    title: 'AWS Cloud Practitioner Voucher',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 18,
+    title: 'Report your CP Exam Results',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 19,
+    title: 'Download Program Certificate',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 20,
+    title: 'Submit your profile for Resume review',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
+  },
+  {
+    id: 21,
+    title: 'Become a Solutions architect',
+    slug: 'course-6',
+    totalItems: 10,
+    completedItems: 6,
+    estimatedHours: 4
   }
 ];
 
@@ -153,37 +348,52 @@ export const modulesByCourse = [
     id: 1,
     title: 'AWS 1: Intro to Cloud Computing',
     slug: 'module-1',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   },
   {
     id: 2,
     title: 'AWS 2: Becoming a Solutions Architect',
     slug: 'module-2',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   },
   {
     id: 3,
     title: 'AWS 3: Become an AWS developer',
     slug: 'module-3',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   },
   {
     id: 4,
     title: 'Land a Job at a Global Tech Company',
-    slug: 'module-4'
+    slug: 'module-4',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   },
   {
     id: 5,
     title: 'Job Hunting Best Practices',
-    slug: 'module-5'
+    slug: 'module-5',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   },
   {
     id: 6,
     title: 'System Design and Architecture',
-    slug: 'module-6'
+    slug: 'module-6',
+    totalItems: 10,
+    completedItems: 10,
+    estimatedHours: 4
   }
 ];
 
@@ -192,36 +402,39 @@ export const lessonsByModule = [
     id: 1,
     title: 'AWS 1: Intro to Cloud Computing',
     slug: 'lesson-1',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    content: "this is lesson content"
   },
   {
     id: 2,
     title: 'AWS 2: Becoming a Solutions Architect',
     slug: 'lesson-2',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    content: "this is lesson content"
   },
   {
     id: 3,
     title: 'AWS 3: Become an AWS developer',
     slug: 'lesson-3',
-    thumbImg: 'aws-thumb-1.jpg',
-    bgColor: '#252f3c'
+    bgColor: '#252f3c',
+    content: "this is lesson content"
   },
   {
     id: 4,
     title: 'Land a Job at a Global Tech Company',
-    slug: 'lesson-4'
+    slug: 'lesson-4',
+    content: "this is lesson content"
   },
   {
     id: 5,
     title: 'Job Hunting Best Practices',
-    slug: 'lesson-5'
+    slug: 'lesson-5',
+    content: "this is lesson content"
   },
   {
     id: 6,
     title: 'System Design and Architecture',
-    slug: 'lesson-6'
+    slug: 'lesson-6',
+    content: "this is lesson content"
   }
 ];

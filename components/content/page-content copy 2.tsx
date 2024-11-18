@@ -5,8 +5,11 @@ import {
   PageContentModule,
   PageContentLesson
 } from "@/components/content"
+import { TypeOptions } from "@/lib/types";
 
-type TypeOptions = "track" | "course" | "module" | "lesson";
+// Fetch in the page, not a component. 
+// 1- Fetch needed data using slug & type,
+// 2- pass it to the component: ContentHero and CardList
 
 export default function PageContent({ type, slug }: { type?: TypeOptions, slug?: string }) {
   // default case: learn tab, no need for slug or type
@@ -14,6 +17,11 @@ export default function PageContent({ type, slug }: { type?: TypeOptions, slug?:
     console.log("going to PageContentLearn component");
     return <PageContentLearn />
   }
+
+  // fetch the content based on the type & slug
+  // pass the fetched data to the corresponding component
+  // track, course, module, lesson have same ContentHero 
+  // All have same CardList EXCEPT lesson have LessonContent
 
   return getComponentByType(type, slug);
 }

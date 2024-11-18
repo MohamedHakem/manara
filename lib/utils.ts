@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function getRelativeHref(pathname: string, href: string): string {
   const pathnameSegments = pathname.split('/').filter(Boolean); // filter(Boolean) filters any empty/faulty segments like ""
   const hrefSegments = href.split('/').filter(Boolean);
-  const validSegments = ['module', 'lesson', 'track', 'course'];
+  const validSegments = ['learn', 'module', 'lesson', 'track', 'course'];
 
   // Ensure href starts with a valid segment if includePathname is true
   if (!validSegments.includes(hrefSegments[0])) {

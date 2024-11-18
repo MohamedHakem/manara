@@ -2,7 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { lessonsByModule } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import DynamicLink from "@/components/dynamic-link"
+import DynamicLink from "@/components/ui/dynamic-link"
 
 export default function PageContentLesson({ slug }: { slug: string }) {
   return (
