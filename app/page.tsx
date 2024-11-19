@@ -50,7 +50,7 @@ export default function Home() {
   return (
     // <div className="w-full lg:w-[56rem] md:max-w-4xl mx-auto flex flex-col gap-4">
     <div className="flex flex-col gap-4 pb-24">
-      <PageHeader activeTitle="Dashboard Homepage" rounded="rounded-none" />
+      <PageHeader title="Dashboard Homepage" rounded="rounded-none" />
       <div className="flex flex-col gap-4 my-4 px-4 w-full lg:w-[48rem] xl:w-[56rem] md:max-w-4xl mx-auto">
         {tiles.map((tile) => (
         <div key={tile.title} className="flex items-center justify-center h-48 rounded-2xl bg-zinc-100">
