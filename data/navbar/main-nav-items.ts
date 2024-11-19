@@ -13,7 +13,7 @@ export const sidebarMainNav = [
   },
   {
     title: 'Practice',
-    url: '#',
+    url: '/practice',
     icon: BicepsFlexed
   },
   {
