@@ -28,7 +28,7 @@ export default function MobileBottomNav() {
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-50">
-      <div className="flex flex-row items-center justify-between p-1">
+      <div className="flex flex-row items-center justify-between">
         <div className="flex items-center justify-between w-3/4">
           {navItems.map((item) => (
             <Link
