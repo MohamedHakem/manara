@@ -10,7 +10,7 @@ export default function LessonContent({ slug }: { slug: string }) {
   const videoParams = ''; // for now, no params
 
   return (
-    <div className="flex flex-col p-4 prose prose-sm mx-auto">
+    <div className="flex flex-col w-full max-w-[45rem] xl:min-w-[47rem] p-4 prose prose-sm mx-auto">
       <div>
         <h2 className="my-[.5em]">[intro] In this lesson you&apos;ll learn:</h2>
         <ol>
@@ -27,11 +27,11 @@ export default function LessonContent({ slug }: { slug: string }) {
         </ol>
       </div>
 
-      <div className="flex rounded-md bg-[#fbf3db] pt-4 px-2">
+      <div className="flex rounded-2xl bg-[#fbf3db] pt-4 px-2 md:px-3">
         {/* <Lightbulb size={34} /> */}
         <FcIdea size={30} />
 
-        <div className="w-full flex-1 ml-1 mt-1">
+        <div className="w-full flex-1 ml-1 md:ml-3 mt-1">
           <h4 className="mt-0">Here&apos;s how to teach someone something:</h4>
           <ol>
             <li>Set Expectations: Tell what they&apos;ll learn!</li>

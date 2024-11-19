@@ -16,6 +16,7 @@ interface HeroSectionProps {
   continueLink?: string;
   ctaText?: string;
   ctaLink?: string;
+  children?: React.ReactNode;
 }
 
 export default function ContentHero({
@@ -26,12 +27,13 @@ export default function ContentHero({
   totalItems,
   estimatedHours,
   type,
+  children
 }: HeroSectionProps) {
   if (type === "learn") return null;
 
   return (
-    <div className="md:pt-8 pb-2 md:px-4 w-full max-w-4xl mx-auto">
-      <div className="relative w-full h-fit md:max-h-60 overflow-hidden flex flex-col md:flex-row md:rounded-xl border-b md:border border-gray-200 md:shadow-md">
+    <div className="md:pt-8 md:px-4 w-full max-w-4xl mx-auto">
+      <div className="relative w-full h-fit md:max-h-80 overflow-hidden flex flex-col md:flex-row md:rounded-xl border-b md:border border-gray-200">
         {type === "track" && <div className="relative w-full h-full md:max-w-[33%] md:h-auto aspect-264/137">
           <OptimizedImage src={`/images/thumbnails/${imageUrl}`} alt={title} className="aspect-264/137 h-fit" />
         </div>}
@@ -60,6 +62,8 @@ export default function ContentHero({
             </span>
           </Link>
         </div> */}
+        
+        {children}
         </div>
       </div>
     </div>
