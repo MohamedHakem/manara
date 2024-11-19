@@ -21,23 +21,23 @@ export default function PageHeader({ activeTitle, rounded }: { activeTitle: stri
         rounded ? rounded : 'rounded-t-2xl'
       )}
     >
-      <div className="flex gap-3 w-full mx-auto justify-between items-center px-4">
+      <div className="flex w-full mx-auto justify-between items-center px-4">
         {/* {isMobile === undefined ? null : isMobile ? null : <SidebarTrigger className="hidden md:block -ml-1 flex-none" />} */}
         <SidebarTrigger className="hidden md:flex -ml-1 flex-none" />
-        <div className="flex lg:w-[56rem] md:max-w-4xl flex-grow mx-auto">
+        <div className="flex w-full lg:w-[56rem] md:max-w-4xl mx-auto">
           {isHomePage ? (
             <NavWordmark className="w-full md:w-fit flex-1 cursor-pointer" isInApp />
           ) : (
-            <>
+            <div className="w-full flex"> 
               <BackButton className="z-10" />
-              <div className="flex flex-1 items-center justify-center -ml-12">
+              <div className="flex flex-1 items-center justify-center -ml-8">
                 <div className="flex-grow flex justify-center">
-                  <span className="-ml-[40px] truncate text-sm md:text-base md:font-semibold text-ellipsis overflow-hidden max-w-[300px]">
+                  <span className="md:-ml-[40px] truncate text-sm md:text-base md:font-semibold text-ellipsis overflow-hidden max-w-[300px]">
                     {title[0]?.title ? title[0].title : activeTitle}
                   </span>
                 </div>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
