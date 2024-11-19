@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 export default function NotFound() {
   const router = useRouter();
   const pathname = usePathname();
-  console.log("🚀 ~ NotFound ~ pathname:", pathname);
+  // console.log("🚀 ~ NotFound ~ pathname:", pathname);
 
   useEffect(() => {
     // Function to handle the redirection after 5 seconds
@@ -38,7 +38,9 @@ export default function NotFound() {
   return (
     <div>
       <h1>Page Not Found</h1>
-      <p>Redirecting in <span id="countdownMessage">5</span> seconds...</p>
+      <p>
+        Redirecting in <span id="countdownMessage">5</span> seconds...
+      </p>
     </div>
   );
 }

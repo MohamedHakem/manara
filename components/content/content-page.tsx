@@ -13,10 +13,10 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
   if (!type || !slug) return notFound();
 
   const itemMetadata = getItemMetadataByTypeAndSlug(type, slug);
-  console.log('🚀 ~ ContentPage ~ itemMetadata:', itemMetadata);
+  // console.log('🚀 ~ ContentPage ~ itemMetadata:', itemMetadata);
 
   const children = getChildrenByTypeAndSlug(type, slug);
-  console.log('🚀 ~ ContentPage ~ children[0]:', children[0]);
+  // console.log('🚀 ~ ContentPage ~ children[0]:', children[0]);
 
   return (
     <div className="w-full lg:w-[56rem] md:max-w-4xl mx-auto pb-24">

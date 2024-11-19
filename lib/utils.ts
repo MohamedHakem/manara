@@ -48,3 +48,10 @@ export function getRelativeHref(pathname: string, href: string): string {
   // If no match found, return the pathname with href appended at the end
   return `${pathname}/${href}`;
 }
+
+export function isActiveTab(href: string, pathname: string): boolean {
+  if (href === '/') {
+    return pathname === href;
+  }
+  return pathname.startsWith(href);
+}

@@ -5,7 +5,7 @@ import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerT
 import { currentUser } from '@/data/current-user';
 import { sidebarMainNav } from '@/data/navbar/main-nav-items';
 import { sidebarSecondaryNav } from '@/data/navbar/secondary-nav-items';
-import { cn } from '@/lib/utils';
+import { cn, isActiveTab } from '@/lib/utils';
 import { BicepsFlexed, GraduationCap, Home, User } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -18,16 +18,7 @@ import { NavWordmark } from './nav-wordmark';
 export default function MobileBottomNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
-  console.log('🚀 ~ MobileBottomNav ~ pathname:', pathname);
 
-  const isActive = (href: string) => {
-    console.log('🚀 ~ isActive ~ href:', href);
-
-    if (href === '/') {
-      return pathname === href;
-    }
-    return pathname.startsWith(href);
-  };
 
   const navItems = [
     { href: '/', icon: Home, label: 'Home' },
@@ -47,10 +38,10 @@ export default function MobileBottomNav() {
                 'flex flex-auto flex-col items-center gap-1 min-w-[64px] py-2 px-3',
                 'text-xs font-medium text-gray-600',
                 'flex-1',
-                isActive(item.href) && 'text-orange-600'
+                isActiveTab(item.href, pathname) && 'text-orange-600'
               )}
             >
-              <item.icon className="h-6 w-6" fill={isActive(item.href) ? '#ea580c50' : 'transparent'} />
+              <item.icon className="h-6 w-6" fill={isActiveTab(item.href, pathname) ? '#ea580c50' : 'transparent'} />
               <span>{item.label}</span>
             </Link>
           ))}

@@ -4,6 +4,7 @@
 
 * {
   scrollbar-color: #d3d1cb rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;

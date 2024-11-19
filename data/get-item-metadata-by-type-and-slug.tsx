@@ -2,7 +2,7 @@ import { coursesByTrack, lessonsByModule, modulesByCourse, tracks } from "@/lib/
 import { DataTypeMap, TypeOptions } from "@/lib/types";
 
 export default function getItemMetadataByTypeAndSlug<T extends TypeOptions>(type: T, slug: string): DataTypeMap[T] {
-  console.log("🚀 ~ getItemMetadataByTypeAndSlug ~ type, slug:", type, ", ", slug)
+  // console.log("🚀 ~ getItemMetadataByTypeAndSlug ~ type, slug:", type, ", ", slug)
   // fetch here, for now use static data
   const Map = {
     learn: () => ({title: "Choose a Learning Paths"}), // learn page has no metadata for now

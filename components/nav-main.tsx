@@ -8,7 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { cn } from '@/lib/utils';
+import { cn, isActiveTab } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -27,15 +27,6 @@ export function NavMain({
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    console.log('🚀 ~ isActive ~ href:', href);
-
-    if (href === '/') {
-      return pathname === href;
-    }
-    return pathname.startsWith(href);
-  };
-
   if (isDrawer) {
     items = items.filter((item) => item.title === 'Connect');
   }
@@ -52,10 +43,10 @@ export function NavMain({
                   target={item.itemType === 'external' ? '_blank' : ''}
                   className={cn(
                     isDrawer ? 'border rounded-lg px-4' : '',
-                    isActive(item.url) && 'text-orange-600 bg-[#ffa50024]'
+                    isActiveTab(item.url, pathname) && 'text-orange-600 bg-[#ffa50024]'
                   )}
                 >
-                  {isDrawer ?  <Earth /> : <item.icon />}
+                  {isDrawer ? <Earth /> : <item.icon />}
                   <span>{isDrawer ? 'Join Manara Community' : item.title}</span>
                   <div className="ml-auto">
                     {!!item.itemType ? <SquareArrowOutUpRight size={14} color="#787878" /> : null}

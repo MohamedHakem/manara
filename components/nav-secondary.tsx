@@ -10,7 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { cn } from '@/lib/utils';
+import { cn, isActiveTab } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Separator } from './ui/separator';
@@ -30,15 +30,6 @@ export function NavSecondary({
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    console.log('🚀 ~ isActive ~ href:', href);
-
-    if (href === '/') {
-      return pathname === href;
-    }
-    return pathname.startsWith(href);
-  };
-
   return (
     <SidebarGroup {...props}>
       <SidebarGroupContent>
@@ -47,13 +38,13 @@ export function NavSecondary({
           {items.map((item, index) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'}>
-                <Link href={item.url} className={cn(isActive(item.url) && 'text-orange-600')}>
+                <Link href={item.url} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
                   <item.icon />
                   <span>{item.title}</span>
                   {!!item.itemType ? <SquareArrowOutUpRight /> : null}
                 </Link>
               </SidebarMenuButton>
-              {isDrawer && index !== items.length -1 ? <Separator /> : null}
+              {isDrawer && index !== items.length - 1 ? <Separator /> : null}
             </SidebarMenuItem>
           ))}
         </SidebarMenu>

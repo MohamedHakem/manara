@@ -8,8 +8,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 export default function CardList({ items, type = 'track' }: CardListProps) {
-  console.log('🚀 ~ CardList ~ type:', type);
-  console.log("🚀 ~ CardList ~ items[0]:", items[0])
+  // console.log('🚀 ~ CardList ~ type:', type);
+  // console.log("🚀 ~ CardList ~ items[0]:", items[0])
 
   if (!type) return notFound();
 
