@@ -17,8 +17,6 @@ export default function BackButton({ className }: { className: string }) {
 
   return (
     <Button
-      // text={isMobile ? '' : 'Back'}
-      text=""
       variant="outline"
       size="default"
       DefaultIcon={ChevronLeft}

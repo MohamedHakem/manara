@@ -18,7 +18,7 @@ export default function PageHeader({ activeTitle, rounded }: { activeTitle: stri
     <header
       className={cn(
         'flex w-full h-12 md:h-[3rem] z-10 shrink-0 items-center gap-2 border-b sticky top-0 bg-white',
-        rounded ? rounded : 'rounded-t-2xl'
+        rounded ? rounded : 'md:rounded-t-2xl'
       )}
     >
       <div className="flex w-full mx-auto justify-between items-center px-4">
