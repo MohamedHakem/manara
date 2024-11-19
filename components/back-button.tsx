@@ -18,12 +18,12 @@ export default function BackButton({ className }: { className: string }) {
   return (
     <Button
       variant="outline"
-      size="default"
+      size="lg"
+      iconSize={8} // [&_svg]:size-4 to 7
+      iconStrokeWidth={1}
       DefaultIcon={ChevronLeft}
-      className={cn(
-        'w-fit h-8 border-0 p-2 pr-3 md:p-3 md:pr-4 [&_svg]:size-5 md:font-semibold text-slate-500',
-        className
-      )}
+      // className={cn('w-fit h-10 border-0 py-1 px-2 md:p-3 [&_svg]:size-5 md:font-semibold text-slate-500', className)}
+      className={cn('w-fit h-10 border-0 p-0 md:p-3 md:font-semibold text-slate-500', className)}
       onClick={() => back()}
     />
   );

@@ -36,6 +36,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Va
   loading?: boolean;
   DefaultIcon?: ElementType;
   HoverIcon?: ElementType;
+  iconSize?: number;
+  iconStrokeWidth?: number;
   shortcut?: string;
   disabledTooltip?: string | ReactNode;
   textWrapperClassName?: string;
@@ -50,6 +52,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       loading,
       DefaultIcon,
       HoverIcon,
+      iconSize,
+      iconStrokeWidth,
       className,
       variant = 'default',
       size,
@@ -60,6 +64,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref
   ) => {
+    console.log('🚀 ~ iconSize:', iconSize);
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
@@ -78,12 +83,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading ? <LoadingSpinner /> : null}
-        <div className={cn('group cursor-pointer flex items-center', isWordmark ? 'gap-2' : '')}>
+        <div
+          className={cn(
+            'group cursor-pointer flex items-center',
+            isWordmark ? 'gap-2' : '',
+            iconSize ? `[&_svg]:size-${iconSize}` : ''
+          )}
+        >
           {DefaultIcon ? (
             <DefaultIcon
-              className={`block mr-0 transition-all ease-in-out duration-300 group-hover:translate-x-[-8px] ${
+              size={iconSize}
+              strokeWidth={iconStrokeWidth}
+              className={cn(
+                'block mr-0 transition-all ease-in-out duration-300 group-hover:translate-x-[-8px] text-gray-500 h-6 w-6',
                 HoverIcon ? 'group-hover:hidden' : ''
-              } h-6 w-6 text-gray-500`}
+              )}
             />
           ) : null}
           {HoverIcon ? <HoverIcon className="hidden group-hover:block h-6 w-6 text-gray-700" /> : null}

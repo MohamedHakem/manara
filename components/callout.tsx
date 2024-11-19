@@ -6,7 +6,7 @@ export default function Callout({ type }: { type: TypeOptions }) {
     <div className="flex min-w-full md:rounded-2xl bg-[#fbf3db] py-3 px-2 md:px-3 prose prose-sm">
       <FcIdea size={30} />
 
-      <div className="w-full flex-1 ml-1 md:ml-3 mt-1">
+      <div className="w-full flex-1 ml-3 mt-1">
         <h4 className="mt-0">In this {type} you&apos;ll learn:</h4>
         <ol>
           <li>Set Expectations: Tell what they&apos;ll learn!</li>

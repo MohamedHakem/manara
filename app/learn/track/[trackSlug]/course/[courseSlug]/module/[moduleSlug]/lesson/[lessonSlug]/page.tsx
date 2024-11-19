@@ -1,22 +1,23 @@
-import PageContent from "@/components/content/content-page";
-import PageHeader from "@/components/page-header";
-import { tracks } from "@/lib/constants"; // replace with courses based on track id/slug
+import PageContent from '@/components/content/content-page';
+import PageHeader from '@/components/page-header';
+import { lessonsByModule, tracks } from '@/lib/constants'; // replace with courses based on track id/slug
 
 // Generate static params using the slugs from `tracks`
 export async function generateStaticParams() {
   return tracks.map((track) => ({
-    slug: track.slug,
+    slug: track.slug
   }));
 }
 
 // the landing page of the lesson, you're on /learn/track/{slug}/course/{course}/module/{module}/lesson/{lesson}
-export default async function CoursePage(props: { params: Promise<{ lessonSlug: string; }> }) {
+export default async function CoursePage(props: { params: Promise<{ lessonSlug: string }> }) {
   const params = await props.params;
   const { lessonSlug } = params;
+  const lesson = lessonsByModule.filter((lesson) => `${lessonSlug}` === lesson.slug);
 
   return (
     <>
-      <PageHeader activeTitle={lessonSlug} />
+      <PageHeader title={lesson[0].title} />
       {/* in the page content below, you'll pass a prop to determine the current content, just the tag "aws-1", 
       and in the PageContent, you should fetch and render the content based on the tag passed to it, in this case "aws-1" is the tag of a learning path
       so you'll fetch the content of the learning path with the tag "aws-1" and render it in the PageContent component, if it's a tag of a course,
@@ -26,7 +27,7 @@ export default async function CoursePage(props: { params: Promise<{ lessonSlug: 
       */}
       {/* example: PageContent type={"track"} slug={slug} */}
 
-      <PageContent type={"lesson"} slug={lessonSlug} />
+      <PageContent type={'lesson'} slug={lessonSlug} />
     </>
   );
 }

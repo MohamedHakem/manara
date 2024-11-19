@@ -21,7 +21,7 @@ interface HeroSectionProps {
 
 export default function ContentHero({
   title,
-  description,
+  // description,
   imageUrl,
   completedItems,
   totalItems,
@@ -39,8 +39,8 @@ export default function ContentHero({
         </div>}
         <div className="relative flex flex-col justify-center w-full md:w-2/3 flex-1 shrink-0 bg-white p-4 text-left">
           <h1 className="text-2xl md:text-3xl font-medium mb-2 text-zinc-400">{title}</h1>
-          <p className="text-sm md:text-lg mb-2 md:mb-4">{description}</p>
-          <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 md:mb-4">
+          {/* <p className="text-sm md:text-lg mb-2 md:mb-4 line-clamp-1">{description}</p> */}
+          <div className="flex flex-wrap justify-start items-center gap-2 md:mb-4">
             {/* <div className="bg-gray-100 border border-gray-300 rounded-lg text-sm">
             Progress: {progress}%
           </div> */}
