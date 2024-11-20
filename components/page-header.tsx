@@ -32,7 +32,7 @@ export default function PageHeader({ title, rounded }: { title: string; rounded?
               <BackButton className="z-10" />
               <div className="flex flex-1 items-center justify-center md:-ml-16">
                 <div className="flex-grow flex justify-start md:justify-center ml-2 md:ml-9">
-                  <span className="md:-ml-[56px] truncate text-base font-semibold md:text-base md:font-semibold text-slate-700 text-ellipsis overflow-hidden max-w-[350px]">
+                  <span className="md:-ml-[56px] truncate text-base font-semibold md:text-base md:font-semibold text-slate-700 text-ellipsis overflow-hidden max-w-[320px]">
                     {/* <span className="truncate text-base font-semibold md:text-base md:font-semibold text-slate-700 text-ellipsis overflow-hidden max-w-[350px]"> */}
                     {/* {title[0]?.title ? title[0].title : activeTitle} */}
                     {title}

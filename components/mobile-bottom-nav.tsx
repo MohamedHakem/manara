@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   Drawer,
   DrawerContent,
+  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -81,6 +82,7 @@ export default function MobileBottomNav() {
                     <NavWordmark className="h-10 w-fit" isInApp isDrawer />
                   </Link>
                 </DrawerTitle>
+                <DrawerDescription />
               </DrawerHeader>
 
               <DrawerFooter className="px-0">

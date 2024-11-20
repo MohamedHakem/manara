@@ -56,14 +56,14 @@ export function NavSecondary({
                 <Link
                   href={manaraCommunity.url}
                   className={cn(
-                    isActiveTab(manaraCommunity.url, pathname) && 'text-orange-600',
+                    // isActiveTab(manaraCommunity.url, pathname) && 'text-orange-600',
                     'flex items-center justify-between'
                   )}
                 >
                   <div className="flex gap-2 items-center justify-between">
                     {/* <manaraCommunity.icon size={16} /> */}
                     <UseAnimations animation={activity} color="#ea580c" />
-                    <span className="text-orange-600">{manaraCommunity.title}</span>
+                    <span>{manaraCommunity.title}</span>
                   </div>
                   {!!manaraCommunity.itemType ? <SquareArrowOutUpRight color="#818181" /> : null}
                   {/* {!!manaraCommunity.itemType ? <UseAnimations  animation={activity} color='#818181' /> : null} */}
@@ -81,7 +81,7 @@ export function NavSecondary({
                 className={index % 2 !== 0 ? 'border-r' : ''}
               >
                 <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
-                  <Link href={item.url} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
+                  <Link href={`/${item.url}`} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
                     <item.icon />
                     <span>{item.title}</span>
                     {!!item.itemType ? <SquareArrowOutUpRight /> : null}
