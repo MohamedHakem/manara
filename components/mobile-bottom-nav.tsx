@@ -41,31 +41,31 @@ export default function MobileBottomNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                'flex flex-auto flex-col items-center gap-1 min-w-[64px] py-2 px-3',
-                'text-xs font-medium text-gray-600',
+                'flex flex-auto flex-col items-center min-w-[64px] py-1 px-3',
+                'text-xs font-medium text-gray-600 active:scale-90 active:bg-orange-100 active:text-orange-500 duration-200 transition-all ease-in-out',
                 'flex-1',
                 isActiveTab(item.href, pathname) && 'text-orange-600'
               )}
             >
               <item.icon className="h-6 w-6" fill={isActiveTab(item.href, pathname) ? '#ea580c50' : 'transparent'} />
-              <span>{item.label}</span>
+              <span className="leading-3 text-[10px]">{item.label}</span>
             </Link>
           ))}
         </div>
 
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen} shouldScaleBackground>
           <DrawerTrigger className="w-1/4 flex-1">
-            <div className="flex flex-col items-center min-w-[64px] px-1">
-              <div className="h-9 w-9 rounded-full overflow-hidden border p-[2px]">
-                <Avatar className="h-[30px] w-[30px] bg-gray-200 rounded-full">
+            <div className="flex flex-col items-center min-w-[64px] px-1 text-gray-600">
+              <div className="w-8 h-8 p-[1px] flex items-center justify-center rounded-full overflow-hidden border">
+                <Avatar className="w-7 h-7 bg-gray-200 rounded-full">
                   <AvatarImage src={currentUser.avatar} alt={currentUser.name} />
-                  <AvatarFallback className="rounded-lg">
-                    <User />
+                  <AvatarFallback className="w-7 h-7 animate-ping">
+                    <User size={16} />
                   </AvatarFallback>
                 </Avatar>
-                <User className="h-6 w-6 p-1 text-gray-600" />
+                {/* <User className="h-6 w-6 p-1 text-gray-600" /> */}
               </div>
-              <span className="text-xs">More</span>
+              <span className="text-[10px] leading-3">More</span>
             </div>
           </DrawerTrigger>
           <DrawerContent>
@@ -90,7 +90,7 @@ export default function MobileBottomNav() {
                   <NavMain items={sidebarMainNav} isDrawer />
                   <NavSecondary isDrawer items={sidebarSecondaryNav} className="mt-auto py-0" closeFunc={setDrawerOpen} />
                 </div>
-                <NavUser user={currentUser} isDrawer />
+                <NavUser user={currentUser} isDrawer closeFunc={setDrawerOpen} />
               </DrawerFooter>
             </div>
           </DrawerContent>

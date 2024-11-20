@@ -33,8 +33,7 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
             estimatedHours={20}
             completedTasks={4}
             totalTasks={10}
-          >
-          </ContentHero>
+          />
 
           {type === "learn" ? null : <WhatYouWillLearn type={type} />}
 

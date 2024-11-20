@@ -6,11 +6,11 @@ export default function PracticePage() {
   return (
     <div className="flex flex-col gap-4 pb-24">
       <div>
-        <PageHeader title="Roadmap" rounded="rounded-none" />
+        <PageHeader title="Your Profile" rounded="rounded-none" />
         <div className="lg:min-w-[640px] max-w-4xl mx-auto">
           <Callout
-            title="Coming soon"
-            description={`Exciting updates are on the way! 🚀\n\nStay tuned to discover the innovative features the Manara team is crafting just for you, and vote on what features would be valuable to add in the future!`}
+            title="Coming Soon"
+            description={`We're working on enhancing your profile experience. 🎯\n\nSoon, you'll be able to update your personal details, manage preferences, and more all in one place.`}
           />
         </div>
       </div>

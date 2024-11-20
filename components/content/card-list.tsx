@@ -63,7 +63,7 @@ export default function CardList({ items, type = 'track' }: CardListProps) {
               </CardContent>
 
               <CardFooter className={cn('block py-2 px-[10px]')}>
-                <h2 className="inline text-xs text-foreground mr-2">{item.title}</h2>
+                <h2 className="inline text-sm md:text-xs text-foreground mr-2">{item.title}</h2>
                 {'completedItems' in item && <ProgressBadge current={item.completedItems} total={item.totalItems} />}
 
                 {'estimatedHours' in item && item.completedItems !== item.totalItems && (

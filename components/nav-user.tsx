@@ -1,6 +1,6 @@
 'use client';
 
-import { BadgeCheck, Bell, ChevronsUpDown, LogOut, Settings } from 'lucide-react';
+import { BadgeCheck, ChevronsUpDown, Inbox, LogOut, Settings, UserCheck } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -14,11 +14,14 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
 
 export function NavUser({
   user,
   showTitleEmail = true,
   isDrawer = false,
+  closeFunc,
   className
 }: {
   user: {
@@ -28,8 +31,9 @@ export function NavUser({
   };
   showTitleEmail?: boolean;
   mobileBottomNav?: boolean;
-  isDrawer?: boolean
+  isDrawer?: boolean;
   className?: string;
+  closeFunc?: Dispatch<SetStateAction<boolean>>;
 }) {
   const { isMobile } = useSidebar();
 
@@ -40,15 +44,23 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className={cn("data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground", isDrawer ? "py-4 h-12" : "py-1 h-8")}
+              className={cn(
+                'data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground',
+                isDrawer ? 'py-4 h-12' : 'py-1 h-8'
+              )}
             >
-              <Avatar className={cn("rounded-full", isDrawer ? "h-10 w-10" : "h-6 w-6")}>
+              <Avatar className={cn('rounded-full', isDrawer ? 'h-10 w-10' : 'h-6 w-6')}>
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback className="rounded-lg">MH</AvatarFallback>
               </Avatar>
               {showTitleEmail ? (
                 <>
-                  <div className={cn("flex gap-1 flex-1 text-left items-center", isDrawer ? "text-base" : "text-sm leading-tight")}>
+                  <div
+                    className={cn(
+                      'flex gap-1 flex-1 text-left items-center',
+                      isDrawer ? 'text-base' : 'text-sm leading-tight'
+                    )}
+                  >
                     <span className="truncate font-semibold text-ellipsis overflow-hidden max-w-[60px]">
                       {user.name}
                     </span>
@@ -79,20 +91,40 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Settings />
-                Settings
-              </DropdownMenuItem>
+              <Link href="/profile" onClick={() => closeFunc && closeFunc(false)}>
+                <DropdownMenuItem>
+                  <UserCheck />
+                  Profile
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <BadgeCheck />
-                Account
-              </DropdownMenuItem>
-              <DropdownMenuItem>
+              <Link href="/settings" onClick={() => closeFunc && closeFunc(false)}>
+                <DropdownMenuItem>
+                  <Settings />
+                  Settings
+                </DropdownMenuItem>
+              </Link>
+            </DropdownMenuGroup>
+            <DropdownMenuGroup>
+              <Link href="/account" onClick={() => closeFunc && closeFunc(false)}>
+                <DropdownMenuItem>
+                  <BadgeCheck />
+                  Account
+                </DropdownMenuItem>
+              </Link>
+              {/* <DropdownMenuItem>
+              <Link href="/">
                 <Bell />
                 Notifications
-              </DropdownMenuItem>
+                </Link>
+              </DropdownMenuItem> */}
+              <Link href="/inbox" onClick={() => closeFunc && closeFunc(false)}>
+                <DropdownMenuItem>
+                  <Inbox />
+                  Inbox
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
