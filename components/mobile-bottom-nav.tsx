@@ -42,7 +42,7 @@ export default function MobileBottomNav() {
               href={item.href}
               className={cn(
                 'flex flex-auto flex-col items-center min-w-[64px] py-1 px-3',
-                'text-xs font-medium text-gray-600 active:scale-90 active:bg-orange-100 active:text-orange-500 duration-200 transition-all ease-in-out',
+                'text-xs font-medium text-gray-600 active:scale-90 active:text-orange-500 duration-50 transition-all ease-in-out',
                 'flex-1',
                 isActiveTab(item.href, pathname) && 'text-orange-600'
               )}
