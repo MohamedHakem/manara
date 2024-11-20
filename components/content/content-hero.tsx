@@ -38,7 +38,7 @@ export default function ContentHero({
           <OptimizedImage src={`/images/thumbnails/${imageUrl}`} alt={title} className="aspect-264/137 h-fit" />
         </div>}
         <div className="relative flex flex-col justify-center w-full md:w-2/3 flex-1 shrink-0 bg-white p-4 text-left">
-          <h1 className="text-2xl md:text-3xl font-medium mb-2 text-zinc-400">{title}</h1>
+          <h1 className="text-xl md:text-3xl font-medium mb-2 text-zinc-400">{title}</h1>
           {/* <p className="text-sm md:text-lg mb-2 md:mb-4 line-clamp-1">{description}</p> */}
           <div className="flex flex-wrap justify-start items-center gap-2 md:mb-4">
             {/* <div className="bg-gray-100 border border-gray-300 rounded-lg text-sm">

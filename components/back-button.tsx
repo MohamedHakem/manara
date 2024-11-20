@@ -20,10 +20,10 @@ export default function BackButton({ className }: { className: string }) {
       variant="outline"
       size="lg"
       iconSize={8} // [&_svg]:size-4 to 7
-      iconStrokeWidth={1}
+      iconStrokeWidth={2}
       DefaultIcon={ChevronLeft}
       // className={cn('w-fit h-10 border-0 py-1 px-2 md:p-3 [&_svg]:size-5 md:font-semibold text-slate-500', className)}
-      className={cn('w-fit h-10 border-0 p-0 md:p-3 md:font-semibold text-slate-500', className)}
+      className={cn('w-fit h-10 border-0 p-0 md:p-3 md:font-semibold text-slate-900', className)}
       onClick={() => back()}
     />
   );
