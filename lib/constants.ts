@@ -1,3 +1,5 @@
+import { BicepsFlexed, GraduationCap, Home } from 'lucide-react';
+
 export const logoSVG = `<svg 
   width="32" 
   height="32" 
@@ -437,4 +439,10 @@ export const lessonsByModule = [
     slug: 'lesson-6',
     content: "this is lesson content"
   }
+];
+
+export const navItems = [
+  { href: '/', icon: Home, label: 'Home' },
+  { href: '/learn', icon: GraduationCap, label: 'Learn' },
+  { href: '/practice', icon: BicepsFlexed, label: 'Practice' }
 ];

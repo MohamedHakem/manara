@@ -12,8 +12,9 @@ import {
 import { currentUser } from '@/data/current-user';
 import { sidebarMainNav } from '@/data/navbar/main-nav-items';
 import { sidebarSecondaryNav } from '@/data/navbar/secondary-nav-items';
+import { navItems } from '@/lib/constants';
 import { cn, isActiveTab } from '@/lib/utils';
-import { BicepsFlexed, GraduationCap, Home, User } from 'lucide-react';
+import { User } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -25,12 +26,7 @@ import { NavWordmark } from './nav-wordmark';
 export default function MobileBottomNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
-
-  const navItems = [
-    { href: '/', icon: Home, label: 'Home' },
-    { href: '/learn', icon: GraduationCap, label: 'Learn' },
-    { href: '/practice', icon: BicepsFlexed, label: 'Practice' }
-  ];
+  console.log("navItems: ", navItems)
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-50 py-1">
@@ -42,7 +38,7 @@ export default function MobileBottomNav() {
               href={item.href}
               className={cn(
                 'flex flex-auto flex-col items-center min-w-[64px] py-1 px-3',
-                'text-xs font-medium text-gray-600 active:scale-90 active:text-orange-500 duration-50 transition-all ease-in-out',
+                'text-xs font-medium text-gray-600 duration-50 transition-all ease-in-out',
                 'flex-1',
                 isActiveTab(item.href, pathname) && 'text-orange-600'
               )}
