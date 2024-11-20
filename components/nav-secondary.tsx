@@ -36,10 +36,10 @@ export function NavSecondary({
     <SidebarGroup {...props}>
       <SidebarGroupContent>
         {/* {isDrawer && <Separator className="mb-4" />} */}
-        <SidebarMenu>
+        <SidebarMenu className={isDrawer ? "gap-0" : ""}>
           {items.map((item, index) => (
             <SidebarMenuItem key={item.title} onClick={() => closeFunc && closeFunc(false)}>
-              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'}>
+              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? "py-1 h-10" : ""}>
                 <Link href={item.url} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
                   <item.icon />
                   <span>{item.title}</span>
