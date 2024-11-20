@@ -1,7 +1,14 @@
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from '@/components/ui/drawer';
 import { currentUser } from '@/data/current-user';
 import { sidebarMainNav } from '@/data/navbar/main-nav-items';
 import { sidebarSecondaryNav } from '@/data/navbar/secondary-nav-items';
@@ -18,7 +25,6 @@ import { NavWordmark } from './nav-wordmark';
 export default function MobileBottomNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
-
 
   const navItems = [
     { href: '/', icon: Home, label: 'Home' },
@@ -79,12 +85,11 @@ export default function MobileBottomNav() {
                 </DrawerTitle>
               </DrawerHeader>
 
-              <div>
-                <NavMain items={sidebarMainNav} isDrawer />
-                <NavSecondary items={sidebarSecondaryNav} className="mt-auto py-0" isDrawer />
-              </div>
-
               <DrawerFooter className="px-0">
+                <div>
+                  <NavMain items={sidebarMainNav} isDrawer />
+                  <NavSecondary isDrawer items={sidebarSecondaryNav} className="mt-auto py-0" closeFunc={setDrawerOpen} />
+                </div>
                 <NavUser user={currentUser} isDrawer />
               </DrawerFooter>
             </div>

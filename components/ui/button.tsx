@@ -64,7 +64,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref
   ) => {
-    console.log('🚀 ~ iconSize:', iconSize);
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp

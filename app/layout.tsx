@@ -5,6 +5,7 @@ import MobileBottomNav from '@/components/mobile-bottom-nav';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
 import './globals.css';
+import { Suspense } from 'react';
 
 // const geistSans = Geist();
 
@@ -24,9 +25,9 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset className="md:border md:border-neutral-200/80 max-h-[calc(100svh-theme(spacing.4))] overflow-auto">
-            {children}
+            <Suspense>{children}</Suspense>
           </SidebarInset>
-        <MobileBottomNav />
+          <MobileBottomNav />
         </SidebarProvider>
         <Toaster />
       </body>

@@ -1,7 +1,7 @@
 'use client';
 
 import { SquareArrowOutUpRight, type LucideIcon } from 'lucide-react';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, Dispatch, SetStateAction } from 'react';
 
 import {
   SidebarGroup,
@@ -13,11 +13,12 @@ import {
 import { cn, isActiveTab } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Separator } from './ui/separator';
+import { Separator } from '@/components/ui/separator';
 
 export function NavSecondary({
   items,
   isDrawer = false,
+  closeFunc,
   ...props
 }: {
   items: {
@@ -27,6 +28,7 @@ export function NavSecondary({
     icon: LucideIcon | React.ComponentType<object>;
   }[];
   isDrawer?: boolean;
+  closeFunc?: Dispatch<SetStateAction<boolean>>;
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
 
@@ -36,7 +38,7 @@ export function NavSecondary({
         {/* {isDrawer && <Separator className="mb-4" />} */}
         <SidebarMenu>
           {items.map((item, index) => (
-            <SidebarMenuItem key={item.title}>
+            <SidebarMenuItem key={item.title} onClick={() => closeFunc && closeFunc(false)}>
               <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'}>
                 <Link href={item.url} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
                   <item.icon />
