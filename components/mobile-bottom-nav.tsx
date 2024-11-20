@@ -33,7 +33,7 @@ export default function MobileBottomNav() {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-50">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-50 py-1">
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center justify-between w-3/4">
           {navItems.map((item) => (
@@ -47,7 +47,7 @@ export default function MobileBottomNav() {
                 isActiveTab(item.href, pathname) && 'text-orange-600'
               )}
             >
-              <item.icon className="h-5 w-5" fill={isActiveTab(item.href, pathname) ? '#ea580c50' : 'transparent'} />
+              <item.icon className="h-6 w-6" fill={isActiveTab(item.href, pathname) ? '#ea580c50' : 'transparent'} />
               <span className="leading-3 text-[10px]">{item.label}</span>
             </Link>
           ))}
@@ -56,8 +56,8 @@ export default function MobileBottomNav() {
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen} shouldScaleBackground>
           <DrawerTrigger className="w-1/4 flex-1">
             <div className="flex flex-col items-center min-w-[64px] px-1 text-gray-600">
-              <div className="w-7 h-7 p-[1px] flex items-center justify-center rounded-full overflow-hidden border">
-                <Avatar className="w-6 h-6 bg-gray-200 rounded-full">
+              <div className="w-8 h-8 p-[1px] flex items-center justify-center rounded-full overflow-hidden border">
+                <Avatar className="w-7 h-7 bg-gray-200 rounded-full">
                   <AvatarImage src={currentUser.avatar} alt={currentUser.name} />
                   <AvatarFallback className="w-7 h-7 animate-ping">
                     <User size={16} />
