@@ -12,7 +12,7 @@ export default function Callout({
   description?: string;
 }) {
   return (
-    <div className="flex min-w-full md:rounded-2xl bg-[#fbf3db] py-3 px-2 md:px-3 prose prose-sm">
+    <div className="flex w-full md:rounded-2xl bg-[#fbf3db] md:mt-8 md:mb-4 py-3 px-2 md:px-3 prose prose-sm lg:w-fit lg:max-w-lg mx-auto">
       <FcIdea size={30} />
 
       <div className="w-full flex-1 ml-3 mt-1">

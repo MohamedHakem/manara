@@ -21,7 +21,7 @@ export function NavUser({
   user,
   showTitleEmail = true,
   isDrawer = false,
-  closeFunc,
+  drawerOpen,
   className
 }: {
   user: {
@@ -33,7 +33,7 @@ export function NavUser({
   mobileBottomNav?: boolean;
   isDrawer?: boolean;
   className?: string;
-  closeFunc?: Dispatch<SetStateAction<boolean>>;
+  drawerOpen?: Dispatch<SetStateAction<boolean>>;
 }) {
   const { isMobile } = useSidebar();
 
@@ -91,7 +91,7 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <Link href="/profile" onClick={() => closeFunc && closeFunc(false)}>
+              <Link href="/profile" onClick={() => drawerOpen && drawerOpen(false)}>
                 <DropdownMenuItem>
                   <UserCheck />
                   Profile
@@ -99,7 +99,7 @@ export function NavUser({
               </Link>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <Link href="/settings" onClick={() => closeFunc && closeFunc(false)}>
+              <Link href="/settings" onClick={() => drawerOpen && drawerOpen(false)}>
                 <DropdownMenuItem>
                   <Settings />
                   Settings
@@ -107,7 +107,7 @@ export function NavUser({
               </Link>
             </DropdownMenuGroup>
             <DropdownMenuGroup>
-              <Link href="/account" onClick={() => closeFunc && closeFunc(false)}>
+              <Link href="/account" onClick={() => drawerOpen && drawerOpen(false)}>
                 <DropdownMenuItem>
                   <BadgeCheck />
                   Account
@@ -119,7 +119,7 @@ export function NavUser({
                 Notifications
                 </Link>
               </DropdownMenuItem> */}
-              <Link href="/inbox" onClick={() => closeFunc && closeFunc(false)}>
+              <Link href="/inbox" onClick={() => drawerOpen && drawerOpen(false)}>
                 <DropdownMenuItem>
                   <Inbox />
                   Inbox

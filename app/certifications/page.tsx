@@ -14,7 +14,7 @@ export default function PracticePage() {
           />
         </div>
       </div>
-      <div className="flex justify-center items-center py-8">
+      <div className="flex justify-center items-center">
         <Empty />
       </div>
     </div>

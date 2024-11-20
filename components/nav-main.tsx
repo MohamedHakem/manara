@@ -32,7 +32,7 @@ export function NavMain({
   }
 
   return (
-    <SidebarGroup {...props}>
+    <SidebarGroup {...props} className={isDrawer ? "p-0 rounded-2xl" : ""}>
       <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => (
@@ -42,7 +42,7 @@ export function NavMain({
                   href={item.url}
                   target={item.itemType === 'external' ? '_blank' : ''}
                   className={cn(
-                    isDrawer ? 'border rounded-lg px-4' : '',
+                    isDrawer ? 'border rounded-2xl px-4' : '',
                     isActiveTab(item.url, pathname) && 'text-orange-600 bg-[#ffa50024]'
                   )}
                 >

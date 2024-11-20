@@ -53,5 +53,25 @@ export function isActiveTab(href: string, pathname: string): boolean {
   if (href === '/') {
     return pathname === href;
   }
+  if (href === 'avatar') {
+    // I want this to return true only if I'm on a route that's not the home or root or dashboard or learn or practice
+    return isSecondaryRoute(pathname);
+    // return !pathname.startsWith("/practice") || !pathname.startsWith("/learn") || pathname !== "/"
+  }
   return pathname.startsWith(href);
+}
+
+export function isSecondaryRoute(pathname: string): boolean {
+  // Immediately return false for root paths
+  if (pathname === '/' || pathname === '') {
+    return false;
+  }
+
+  const mainRoutes = ['/', '/dashboard', '/learn', '/practice'];
+
+  // Clean up pathname by removing trailing slash
+  const cleanPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+
+  // Check if current path is NOT one of the main routes
+  return !mainRoutes.includes(cleanPath);
 }

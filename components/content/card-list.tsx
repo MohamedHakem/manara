@@ -49,6 +49,7 @@ export default function CardList({ items, type = 'track' }: CardListProps) {
                     quality={65}
                     decoding="sync"
                     loading="eager"
+                    priority
                   />
                 ) : (
                   <div className="px-2 py-1 rounded-full">
