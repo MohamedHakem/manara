@@ -2,48 +2,48 @@ import { BookText, Calendar, Chrome, Cloudy, GraduationCap, Headset, Logs, Map, 
 
 export const sidebarSecondaryNav = [
   {
-    title: 'AWS Live Sessions',
-    url: 'aws-live-sessions',
+    title: 'Live Sessions',
+    url: '/live-sessions',
     icon: Cloudy
   },
   {
     title: 'Upcoming Events',
-    url: 'events',
+    url: '/events',
     icon: Calendar
   },
   {
     title: 'Manara Extension',
-    url: 'manara-extension',
+    url: '/manara-extension',
     icon: Chrome
   },
   {
     title: 'Certifications',
-    url: 'certifications',
+    url: '/certifications',
     icon: GraduationCap
   },
   {
     title: 'Feedback',
-    url: 'feedback',
+    url: '/feedback',
     icon: Send
   },
   {
     title: 'Help',
-    url: 'help',
+    url: '/help',
     icon: Headset
   },
   {
     title: 'Roadmap',
-    url: 'roadmap',
+    url: '/roadmap',
     icon: Map
   },
   {
     title: 'Changelog',
-    url: 'changelog',
+    url: '/changelog',
     icon: Logs
   },
   {
     title: 'Docs',
-    url: 'docs',
+    url: '/docs',
     icon: BookText
   },
 ];

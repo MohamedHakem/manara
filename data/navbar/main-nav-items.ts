@@ -1,4 +1,4 @@
-import { BicepsFlexed, Home, NotebookPen, Users } from 'lucide-react';
+import { BicepsFlexed, Home, NotebookPen, Trophy, Users } from 'lucide-react';
 
 export const sidebarMainNav = [
   {
@@ -21,5 +21,10 @@ export const sidebarMainNav = [
     url: 'https://thisismanara.circle.so',
     itemType: 'external',
     icon: Users
-  }
+  },
+  {
+    title: 'Leaderboard',
+    url: '/leaderboard',
+    icon: Trophy
+  },
 ];

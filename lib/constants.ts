@@ -441,7 +441,7 @@ export const lessonsByModule = [
   }
 ];
 
-export const navItems = [
+export const deckNavItems = [
   { href: '/', icon: Home, label: 'Home' },
   { href: '/learn', icon: GraduationCap, label: 'Learn' },
   { href: '/practice', icon: BicepsFlexed, label: 'Practice' }

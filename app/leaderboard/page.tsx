@@ -6,11 +6,12 @@ export default function PracticePage() {
   return (
     <div className="flex flex-col gap-4 pb-24">
       <div>
-        <PageHeader title="Roadmap" rounded="rounded-none" />
+        <PageHeader title="Leaderboard" rounded="rounded-none" />
           <Callout
-            title="Coming soon"
+            title="Top the Charts"
             type="soon"
-            description={`Exciting updates are on the way! 🚀\n\nStay tuned to discover the innovative features the Manara team is crafting just for you, and vote on what features would be valuable to add in the future!`}
+            description={`Compete and climb the leaderboard! 🚀\n\nTrack your progress and see how you stack up against your peers. 
+      Showcase your achievements and stay motivated as you work your way to the top!`}
           />
       </div>
       <div className="flex justify-center items-center">

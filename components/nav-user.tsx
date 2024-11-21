@@ -38,7 +38,7 @@ export function NavUser({
   const { isMobile } = useSidebar();
 
   return (
-    <SidebarMenu className={cn('p-1', className)}>
+    <SidebarMenu className={cn('p-1 border', className, isDrawer ? 'rounded-2xl' : 'rounded-lg')}>
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

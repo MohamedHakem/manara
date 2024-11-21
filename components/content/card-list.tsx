@@ -14,7 +14,7 @@ export default function CardList({ items, type = 'track' }: CardListProps) {
   if (!type) return notFound();
 
   return (
-    <div className={cn('pt-8 pb-2 px-6 md:px-4 w-full mx-auto max-w-4xl')}>
+    <div className={cn('py-4 md:py-0 w-full mx-auto max-w-4xl')}>
       <div className={cn('grid grid-cols-1 md:grid-cols-2', type === 'track' ? 'lg:grid-cols-3 gap-4' : 'gap-3')}>
         {items.map((item, index) => (
           <DynamicLink

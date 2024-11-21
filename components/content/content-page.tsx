@@ -18,11 +18,12 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
   const children = getChildrenByTypeAndSlug(type, slug);
 
   return (
-    <div className="w-full max-w-[45rem] lg:w-[45rem] xl:w-[56rem] md:max-w-4xl mx-auto pb-16 md:pb-4">
+    // <div className="w-full max-w-[45rem] md:max-w-4xl lg:w-[45rem] xl:w-[56rem] mx-auto pb-16 md:pb-4">
+    <div className="w-full lg:w-[45rem] xl:w-[56rem] mx-auto pb-16 md:pb-4">
       {type === 'lesson' ? (
         <LessonContent slug={slug} />
       ) : (
-        <>
+        <div className="flex flex-col md:gap-2 md:py-4 md:px-8">
           <ContentHero
             type={type}
             title={itemMetadata?.title}
@@ -38,7 +39,7 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
           {type === "learn" ? null : <WhatYouWillLearn type={type} />}
 
           <CardList items={children} type={getCardListType(type)} />
-        </>
+        </div>
       )}
     </div>
   );

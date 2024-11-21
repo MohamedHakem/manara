@@ -27,23 +27,33 @@ export function NavMain({
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
 
-  if (isDrawer) {
-    items = items.filter((item) => item.title === 'Connect');
-  }
+  // if (isDrawer) {
+  //   items = items.filter((item) => item.title === 'Connect');
+  // }
+
+  console.log(
+    'nav-main ~ isActiveTab(items[2].url, pathname): ',
+    ', pathname: ',
+    pathname,
+    ', items[2].url: ',
+    items[2].url,
+    ', result: ',
+    isActiveTab(items[2].url, pathname)
+  );
 
   return (
-    <SidebarGroup {...props} className={isDrawer ? "p-0 rounded-2xl" : ""}>
+    <SidebarGroup {...props} className={isDrawer ? 'p-0 rounded-2xl' : ''}>
       <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'default'}>
+              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'default'} className={cn("hover:text-orange-600 active:text-orange-600")}>
                 <Link
                   href={item.url}
                   target={item.itemType === 'external' ? '_blank' : ''}
                   className={cn(
                     isDrawer ? 'border rounded-2xl px-4' : '',
-                    isActiveTab(item.url, pathname) && 'text-orange-600 bg-[#ffa50024]'
+                    isActiveTab(item.url, pathname) && 'text-orange-600 hover:text-sidebar-[#ea580c] bg-[#ffa50024]'
                   )}
                 >
                   {isDrawer ? <Earth /> : <item.icon />}

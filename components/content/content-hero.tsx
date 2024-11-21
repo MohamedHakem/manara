@@ -32,13 +32,13 @@ export default function ContentHero({
   if (type === "learn") return null;
 
   return (
-    <div className="md:pt-8 md:px-4 w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto">
       <div className="relative w-full h-fit md:max-h-80 overflow-hidden flex flex-col md:flex-row md:rounded-xl border-b md:border border-gray-200">
         {type === "track" && <div className="relative w-full h-full md:max-w-[33%] md:h-auto aspect-264/137">
           <OptimizedImage src={`/images/thumbnails/${imageUrl}`} alt={title} className="aspect-264/137 h-fit" />
         </div>}
-        <div className="relative flex flex-col justify-center w-full md:w-2/3 flex-1 shrink-0 bg-white p-4 text-left">
-          <h1 className="text-xl md:text-3xl font-medium mb-2 text-zinc-400">{title}</h1>
+        <div className="relative flex flex-col justify-center w-full md:w-2/3 flex-1 shrink-0 bg-white py-3 px-4 text-left">
+          <h1 className="text-xl md:text-3xl font-medium mb-2 text-zinc-800">{title}</h1>
           {/* <p className="text-sm md:text-lg mb-2 md:mb-4 line-clamp-1">{description}</p> */}
           <div className="flex flex-wrap justify-start items-center gap-2 md:mb-4">
             {/* <div className="bg-gray-100 border border-gray-300 rounded-lg text-sm">

@@ -54,7 +54,12 @@ export function NavWordmark({
       <Popover.Anchor asChild>
         <div onClick={handleOnClick} className="w-full max-w-full">
           {variant === 'full' ? (
-            <div className={cn('flex justify-between items-center cursor-pointer', isDrawer ? "border rounded-lg py-2 px-3" : "")}>
+            <div
+              className={cn(
+                'flex justify-between items-center cursor-pointer',
+                isDrawer ? 'border rounded-2xl py-2 px-3' : ''
+              )}
+            >
               <Wordmark className={className} />
               <Candy size={14} color={'orange'} />
             </div>

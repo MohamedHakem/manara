@@ -40,6 +40,16 @@ export function NavSecondary({
     icon: Earth
   };
 
+  console.log(
+    'nav-secondary ~ isActiveTab(items[0].url, pathname): ',
+    ', pathname: ',
+    pathname,
+    ', items[0].url: ',
+    items[0].url,
+    ', result: ',
+    isActiveTab(items[0].url, pathname)
+  );
+
   return (
     <SidebarGroup {...props} className={isDrawer ? 'p-0' : ''}>
       <SidebarGroupContent>
@@ -78,10 +88,10 @@ export function NavSecondary({
               <SidebarMenuItem
                 key={item.title}
                 onClick={() => drawerOpen && drawerOpen(false)}
-                className={index % 2 !== 0 ? 'border-r' : ''}
+                className={isDrawer && index % 2 !== 0 ? 'border-r' : ''}
               >
-                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
-                  <Link href={`/${item.url}`} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
+                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'default'} className={isDrawer ? 'py-1 h-11' : 'hover:text-orange-600 active:text-ornage-600'}>
+                  <Link href={`${item.url}`} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600 hover:text-orange-600  bg-[#ffa50024]')}>
                     <item.icon />
                     <span>{item.title}</span>
                     {!!item.itemType ? <SquareArrowOutUpRight /> : null}

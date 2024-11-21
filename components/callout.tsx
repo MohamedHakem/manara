@@ -3,28 +3,31 @@ import { Fragment } from 'react';
 import { FcIdea } from 'react-icons/fc';
 
 export default function Callout({
-  // type,
+  type,
   title,
   description
 }: {
-  type?: TypeOptions;
+  type?: TypeOptions | string;
   title?: string;
   description?: string;
 }) {
   return (
-    <div className="flex w-full md:rounded-2xl bg-[#fbf3db] md:mt-8 md:mb-4 py-3 px-2 md:px-3 prose prose-sm lg:w-fit lg:max-w-lg mx-auto">
+    <div className={type ==="soon" ? "lg:min-w-[640px] max-w-3xl mx-auto md:px-4" : ""}>
+    <div className="flex w-full md:rounded-2xl bg-[#fbf3db] md:mt-2 py-3 px-2 md:px-3 prose prose-sm max-w-none mx-auto">
       <FcIdea size={30} />
 
       <div className="w-full flex-1 ml-3 mt-1">
         {/* {title ? <h3 className="mt-0">{title}</h3> : <h4 className="mt-0">In this {type} you&apos;ll learn:</h4>} */}
         {title && <h3 className="mt-0">{title}</h3>}
         {description ? (
-          <p className="pr-1">{description.split('\n').map((line, index) => (
-            <Fragment key={index}>
-              {line}
-              <br />
-            </Fragment>
-          ))}</p>
+          <p className="pr-1">
+            {description.split('\n').map((line, index) => (
+              <Fragment key={index}>
+                {line}
+                <br />
+              </Fragment>
+            ))}
+          </p>
         ) : (
           <ol>
             <li>Set Expectations: Tell what they&apos;ll learn!</li>
@@ -42,6 +45,7 @@ export default function Callout({
           </ol>
         )}
       </div>
+    </div>
     </div>
   );
 }

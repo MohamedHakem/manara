@@ -28,11 +28,11 @@ export default function PageHeader({ title, rounded }: { title: string; rounded?
           {isHomePage ? (
             <NavWordmark className="w-full md:w-fit flex-1 cursor-pointer" isInApp />
           ) : (
-            <div className="w-full flex">
+            <div className="w-full flex gap-1">
               <BackButton className="z-10" />
-              <div className="flex flex-1 items-center justify-center md:-ml-16">
-                <div className="flex-grow flex justify-start md:justify-center ml-2 md:ml-9">
-                  <span className="md:-ml-[56px] truncate text-base font-semibold md:text-base md:font-semibold text-slate-900 text-ellipsis overflow-hidden max-w-[325px]">
+              <div className="w-full flex flex-1 items-center justify-center pt-[11px] pb-3">
+                <div className="w-full flex-grow flex justify-start md:justify-center ml-1">
+                  <span className="leading-[18px] truncate text-ellipsis overflow-hidden max-w-[calc(100%-40px)] md:max-w-lg">
                     {/* <span className="truncate text-base font-semibold md:text-base md:font-semibold text-slate-700 text-ellipsis overflow-hidden max-w-[350px]"> */}
                     {/* {title[0]?.title ? title[0].title : activeTitle} */}
                     {title}

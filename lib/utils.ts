@@ -63,10 +63,11 @@ export function isActiveTab(href: string, pathname: string): boolean {
   }
 
   // const cleanPath = pathname.startsWith('/') ? pathname.slice(1,) : pathname;
+  // const cleanHref = pathname.startsWith('/') ? pathname.slice(1,) : pathname;
   // console.log("🚀 ~ isActiveTab ~ cleanPath:", cleanPath)
 
   // return pathname.startsWith(`/${cleanPath});
-  return pathname.startsWith(`/${href}`);
+  return pathname.startsWith(`${href}`);
 }
 
 export function isSecondaryRoute(pathname: string): boolean {
