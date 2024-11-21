@@ -8,13 +8,11 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 export default function CardList({ items, type = 'track' }: CardListProps) {
-  // console.log('🚀 ~ CardList ~ type:', type);
-  // console.log("🚀 ~ CardList ~ items[0]:", items[0])
 
   if (!type) return notFound();
 
   return (
-    <div className={cn('py-4 md:py-0 w-full mx-auto max-w-4xl')}>
+    <div className={cn('py-4 md:py-0 px-4 w-full mx-auto max-w-4xl')}>
       <div className={cn('grid grid-cols-1 md:grid-cols-2', type === 'track' ? 'lg:grid-cols-3 gap-4' : 'gap-3')}>
         {items.map((item, index) => (
           <DynamicLink

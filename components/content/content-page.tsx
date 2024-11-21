@@ -24,19 +24,23 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
         <LessonContent slug={slug} />
       ) : (
         <div className="flex flex-col md:gap-2 md:py-4 md:px-8">
-          <ContentHero
-            type={type}
-            title={itemMetadata?.title}
-            description={`Description: ${itemMetadata?.title}`}
-            imageUrl={'thumbImg' in itemMetadata ? itemMetadata.thumbImg : undefined}
-            completedItems={'completedItems' in itemMetadata ? itemMetadata?.completedItems : 0}
-            totalItems={'totalItems' in itemMetadata ? itemMetadata?.totalItems : 0}
-            estimatedHours={20}
-            completedTasks={4}
-            totalTasks={10}
-          />
+          {type === 'learn' ? null : (
+            <>
+              <ContentHero
+                type={type}
+                title={itemMetadata?.title}
+                description={`Description: ${itemMetadata?.title}`}
+                imageUrl={'thumbImg' in itemMetadata ? itemMetadata.thumbImg : undefined}
+                completedItems={'completedItems' in itemMetadata ? itemMetadata?.completedItems : 0}
+                totalItems={'totalItems' in itemMetadata ? itemMetadata?.totalItems : 0}
+                estimatedHours={20}
+                completedTasks={4}
+                totalTasks={10}
+              />
 
-          {type === "learn" ? null : <WhatYouWillLearn type={type} />}
+              <WhatYouWillLearn type={type} />
+            </>
+          )}
 
           <CardList items={children} type={getCardListType(type)} />
         </div>
