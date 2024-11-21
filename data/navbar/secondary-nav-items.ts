@@ -1,6 +1,23 @@
-import { BookText, Calendar, Chrome, Cloudy, GraduationCap, Headset, Logs, Map, Send } from 'lucide-react';
+import {
+  BookText,
+  Calendar,
+  Chrome,
+  Cloudy,
+  Gift,
+  GraduationCap,
+  Headset,
+  ListCollapse,
+  Map,
+  Send,
+  TvMinimal
+} from 'lucide-react';
 
 export const sidebarSecondaryNav = [
+  {
+    title: 'Showcase',
+    url: '/showcase',
+    icon: TvMinimal
+  },
   {
     title: 'Live Sessions',
     url: '/live-sessions',
@@ -37,13 +54,18 @@ export const sidebarSecondaryNav = [
     icon: Map
   },
   {
+    title: 'Referral',
+    url: '/referral',
+    icon: Gift
+  },
+  {
     title: 'Changelog',
     url: '/changelog',
-    icon: Logs
+    icon: ListCollapse
   },
   {
     title: 'Docs',
     url: '/docs',
     icon: BookText
-  },
+  }
 ];

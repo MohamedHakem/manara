@@ -1,6 +1,6 @@
 'use client';
 
-import { BadgeCheck, ChevronsUpDown, Inbox, LogOut, Settings, UserCheck } from 'lucide-react';
+import { BadgeCheck, ChevronsUpDown, FileClock, Inbox, LogOut, Settings, UserCheck } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -22,6 +22,8 @@ export function NavUser({
   showTitleEmail = true,
   isDrawer = false,
   drawerOpen,
+  iconSize,
+  iconColor,
   className
 }: {
   user: {
@@ -32,8 +34,10 @@ export function NavUser({
   showTitleEmail?: boolean;
   mobileBottomNav?: boolean;
   isDrawer?: boolean;
-  className?: string;
   drawerOpen?: Dispatch<SetStateAction<boolean>>;
+  iconSize?: number;
+  iconColor?: string;
+  className?: string;
 }) {
   const { isMobile } = useSidebar();
 
@@ -92,44 +96,50 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <Link href="/profile" onClick={() => drawerOpen && drawerOpen(false)}>
-                <DropdownMenuItem>
-                  <UserCheck />
-                  Profile
+                <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+                  <UserCheck color={iconColor} />
+                  <span>Profile</span>
                 </DropdownMenuItem>
               </Link>
-            </DropdownMenuGroup>
-            <DropdownMenuGroup>
+
               <Link href="/settings" onClick={() => drawerOpen && drawerOpen(false)}>
-                <DropdownMenuItem>
-                  <Settings />
-                  Settings
+                <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+                  <Settings color={iconColor} />
+                  <span>Settings</span>
                 </DropdownMenuItem>
               </Link>
-            </DropdownMenuGroup>
-            <DropdownMenuGroup>
               <Link href="/account" onClick={() => drawerOpen && drawerOpen(false)}>
-                <DropdownMenuItem>
-                  <BadgeCheck />
-                  Account
+                <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+                  <BadgeCheck color={iconColor} />
+                  <span>Account</span>
                 </DropdownMenuItem>
               </Link>
-              {/* <DropdownMenuItem>
+              {/*                 <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+
               <Link href="/">
-                <Bell />
+                <Bell color={iconColor} />
                 Notifications
                 </Link>
               </DropdownMenuItem> */}
+              {isDrawer && (
+                <Link href="/inbox" onClick={() => drawerOpen && drawerOpen(false)}>
+                  <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+                    <Inbox color={iconColor} />
+                    <span>Inbox</span>
+                  </DropdownMenuItem>
+                </Link>
+              )}
               <Link href="/inbox" onClick={() => drawerOpen && drawerOpen(false)}>
-                <DropdownMenuItem>
-                  <Inbox />
-                  Inbox
+                <DropdownMenuItem className={`[&_svg]:size-${iconSize}`}>
+                  <FileClock color={iconColor} />
+                  <span>Activity log</span>
                 </DropdownMenuItem>
               </Link>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <LogOut />
-              Log out
+            <DropdownMenuItem className={`[&_svg]:size-4`}>
+              <LogOut color={iconColor} />
+              <span className="text-xs">Log out</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

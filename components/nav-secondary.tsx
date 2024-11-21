@@ -20,6 +20,8 @@ import { usePathname } from 'next/navigation';
 export function NavSecondary({
   items,
   isDrawer = false,
+  iconSize,
+  iconColor,
   drawerOpen,
   ...props
 }: {
@@ -31,6 +33,8 @@ export function NavSecondary({
   }[];
   isDrawer?: boolean;
   drawerOpen?: Dispatch<SetStateAction<boolean>>;
+  iconSize?: number;
+  iconColor?: string;
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
   const manaraCommunity = {
@@ -83,35 +87,35 @@ export function NavSecondary({
             </SidebarMenuItem>
           )}
 
-          {items.map(
-            (item, index) => (
-              <SidebarMenuItem
-                key={item.title}
-                onClick={() => drawerOpen && drawerOpen(false)}
-                className={isDrawer && index % 2 !== 0 ? 'border-r' : ''}
+          {items.map((item, index) => (
+            <SidebarMenuItem
+              key={item.title}
+              onClick={() => drawerOpen && drawerOpen(false)}
+              className={isDrawer && index % 2 !== 0 ? 'border-r' : ''}
+            >
+              {/* <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'default'} className={isDrawer ? 'py-1 h-11' : 'hover:text-orange-600 active:text-ornage-600'}> */}
+              <SidebarMenuButton
+                asChild
+                size={isDrawer ? 'lg' : 'default'}
+                // className={isDrawer ? 'py-1 h-11' : 'active:text-orange-600'}
+                className={isDrawer ? 'py-1 h-11' : ''}
               >
-                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'default'} className={isDrawer ? 'py-1 h-11' : 'hover:text-orange-600 active:text-ornage-600'}>
-                  <Link href={`${item.url}`} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600 hover:text-orange-600  bg-[#ffa50024]')}>
-                    <item.icon />
-                    <span>{item.title}</span>
-                    {!!item.itemType ? <SquareArrowOutUpRight /> : null}
-                  </Link>
-                </SidebarMenuButton>
-                {isDrawer && index < items.length - 2 ? <Separator /> : null}
-              </SidebarMenuItem>
-            )
-
-            // <SidebarMenuItem key={item.title} onClick={() => drawerOpen && drawerOpen(false)} className={index % 2 === 0 ? "border-r" : ""}>
-            //   <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? "py-1 h-11" : ""}>
-            //     <Link href={item.url} className={cn(isActiveTab(item.url, pathname) && 'text-orange-600')}>
-            //       <item.icon />
-            //       <span>{item.title}</span>
-            //       {!!item.itemType ? <SquareArrowOutUpRight /> : null}
-            //     </Link>
-            //   </SidebarMenuButton>
-            //   {isDrawer && index !== items.length - 1 ? <Separator /> : null}
-            // </SidebarMenuItem>
-          )}
+                <Link
+                  href={`${item.url}`}
+                  className={cn(
+                    // isActiveTab(item.url, pathname) && 'text-orange-600 hover:text-orange-600 gap-3 bg-[#ffa50024]'
+                    isActiveTab(item.url, pathname) && 'hover:text-orange-600 bg-[#e5e5e580] font-semibold [&_svg]:stroke-slate-900',
+                    `gap-3 [&_svg]:size-${iconSize || '4'}`
+                  )}
+                >
+                  <item.icon color={iconColor} />
+                  <span>{item.title}</span>
+                  {!!item.itemType ? <SquareArrowOutUpRight /> : null}
+                </Link>
+              </SidebarMenuButton>
+              {isDrawer && index < items.length - 2 ? <Separator /> : null}
+            </SidebarMenuItem>
+          ))}
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>

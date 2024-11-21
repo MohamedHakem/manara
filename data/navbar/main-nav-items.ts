@@ -1,4 +1,4 @@
-import { BicepsFlexed, Home, NotebookPen, Trophy, Users } from 'lucide-react';
+import { BicepsFlexed, Home, Inbox, Medal, NotebookPen, Users } from 'lucide-react';
 
 export const sidebarMainNav = [
   {
@@ -25,6 +25,11 @@ export const sidebarMainNav = [
   {
     title: 'Leaderboard',
     url: '/leaderboard',
-    icon: Trophy
+    icon: Medal
+  },
+  {
+    title: 'Inbox',
+    url: '/inbox',
+    icon: Inbox
   },
 ];

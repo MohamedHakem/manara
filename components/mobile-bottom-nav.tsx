@@ -92,9 +92,22 @@ export default function MobileBottomNav() {
               <DrawerFooter className="gap-3 p-0">
                 <div>
                   {/* <NavMain isDrawer items={sidebarMainNav}  /> */}
-                  <NavSecondary isDrawer items={sidebarSecondaryNav} className="py-0" drawerOpen={setDrawerOpen} />
+                  <NavSecondary
+                    isDrawer
+                    items={sidebarSecondaryNav}
+                    className="py-0"
+                    iconSize={5}
+                    iconColor={'#91918e'}
+                    drawerOpen={setDrawerOpen}
+                  />
                 </div>
-                <NavUser user={currentUser} isDrawer drawerOpen={setDrawerOpen} />
+                <NavUser 
+                  user={currentUser} 
+                  isDrawer 
+                  drawerOpen={setDrawerOpen} 
+                  iconSize={5} 
+                  iconColor={'#91918e'}
+                />
               </DrawerFooter>
             </div>
           </DrawerContent>

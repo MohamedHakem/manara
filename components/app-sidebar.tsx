@@ -13,7 +13,7 @@ import { sidebarSecondaryNav } from '@/data/navbar/secondary-nav-items';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-export function AppSidebar({ variant = "inset", ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ variant = 'inset', ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar variant={variant} {...props}>
       <SidebarHeader>
@@ -29,11 +29,12 @@ export function AppSidebar({ variant = "inset", ...props }: React.ComponentProps
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={sidebarMainNav} />
-        <NavSecondary items={sidebarSecondaryNav} className="mt-auto" />
+        <NavMain items={sidebarMainNav} iconSize={5} iconColor={'#91918e'} />
+        <NavSecondary items={sidebarSecondaryNav} iconSize={5} iconColor={'#91918e'} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter className="py-[0.1rem] px-[0.7rem]">
-        <NavUser user={currentUser} />
+        {/* <NavUser user={currentUser} /> */}
+        <NavUser user={currentUser} iconSize={5} iconColor={'#91918e'} />
       </SidebarFooter>
     </Sidebar>
   );
