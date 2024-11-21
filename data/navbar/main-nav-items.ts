@@ -1,3 +1,5 @@
+// import RankingIcon from '@/components/icons/ranking';
+// import RankingOutline from '@/components/icons/ranking-outline';
 import { BicepsFlexed, Home, Inbox, Medal, NotebookPen, Users } from 'lucide-react';
 
 export const sidebarMainNav = [
@@ -26,6 +28,7 @@ export const sidebarMainNav = [
     title: 'Leaderboard',
     url: '/leaderboard',
     icon: Medal
+    // icon: RankingOutline
   },
   {
     title: 'Inbox',
