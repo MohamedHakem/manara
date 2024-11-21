@@ -21,7 +21,7 @@ export default function ContentPage({ type, slug }: { type: TypeOptions; slug: s
     // <div className="w-full max-w-[45rem] md:max-w-4xl lg:w-[45rem] xl:w-[56rem] mx-auto pb-16 md:pb-4">
     <div className="w-full lg:w-[45rem] xl:w-[56rem] mx-auto pb-16 md:pb-4">
       {type === 'lesson' ? (
-        <LessonContent slug={slug} />
+        <LessonContent />
       ) : (
         <div className="flex flex-col md:gap-2 md:py-4 md:px-8">
           {type === 'learn' ? null : (
