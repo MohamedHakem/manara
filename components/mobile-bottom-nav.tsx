@@ -25,11 +25,11 @@ import { NavWordmark } from './nav-wordmark';
 export default function MobileBottomNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
-  console.log('deckNavItems: ', deckNavItems);
-  console.log("isActiveTab('avatar', pathname): ", isActiveTab('avatar', pathname));
+  // console.log('deckNavItems: ', deckNavItems);
+  // console.log("isActiveTab('avatar', pathname): ", isActiveTab('avatar', pathname));
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-50 py-1">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white z-100 py-1">
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center justify-between w-3/4">
           {deckNavItems.map((item) => (
@@ -91,7 +91,6 @@ export default function MobileBottomNav() {
 
               <DrawerFooter className="gap-3 p-0">
                 <div>
-                  {/* <NavMain isDrawer items={sidebarMainNav}  /> */}
                   <NavSecondary
                     isDrawer
                     items={sidebarSecondaryNav}

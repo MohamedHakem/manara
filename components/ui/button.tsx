@@ -37,6 +37,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Va
   DefaultIcon?: ElementType;
   HoverIcon?: ElementType;
   iconSize?: number;
+  iconColor?: string;
   iconStrokeWidth?: number;
   shortcut?: string;
   disabledTooltip?: string | ReactNode;
@@ -53,6 +54,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       DefaultIcon,
       HoverIcon,
       iconSize,
+      iconColor,
       iconStrokeWidth,
       className,
       variant = 'default',
@@ -92,6 +94,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {DefaultIcon ? (
             <DefaultIcon
               size={iconSize}
+              color={iconColor}
               strokeWidth={iconStrokeWidth}
               className={cn(
                 'block mr-0 transition-all ease-in-out duration-300 group-hover:translate-x-[-8px] text-gray-500 h-6 w-6',

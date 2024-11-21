@@ -50,13 +50,13 @@ export function getRelativeHref(pathname: string, href: string): string {
 }
 
 export function isActiveTab(href: string, pathname: string): boolean {
-  console.log('🚀 ~ isActiveTab ~ href:', href);
-  console.log('🚀 ~ isActiveTab ~ pathname:', pathname);
+  // console.log('🚀 ~ isActiveTab ~ href:', href);
+  // console.log('🚀 ~ isActiveTab ~ pathname:', pathname);
   if (href === '/') {
     return pathname === href;
   }
   if (href === 'avatar') {
-    console.log("from avatar");
+    // console.log("from avatar");
     // I want this to return true only if I'm on a route that's not the home or root or dashboard or learn or practice
     return isSecondaryRoute(pathname);
     // return !pathname.startsWith("/practice") || !pathname.startsWith("/learn") || pathname !== "/"

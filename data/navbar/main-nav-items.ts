@@ -1,12 +1,14 @@
 // import RankingIcon from '@/components/icons/ranking';
 // import RankingOutline from '@/components/icons/ranking-outline';
-import { BicepsFlexed, Home, Inbox, Medal, NotebookPen, Users } from 'lucide-react';
+import { AnimatedHomeIcon } from '@/components/icons/animated-home-icon';
+import { AnimatedUsersIcon } from '@/components/icons/animated-users-icon';
+import { BicepsFlexed, Inbox, Medal, NotebookPen } from 'lucide-react';
 
 export const sidebarMainNav = [
   {
     title: 'Home',
     url: '/',
-    icon: Home
+    icon: AnimatedHomeIcon
   },
   {
     title: 'Learn',
@@ -22,13 +24,12 @@ export const sidebarMainNav = [
     title: 'Connect',
     url: 'https://thisismanara.circle.so',
     itemType: 'external',
-    icon: Users
+    icon: AnimatedUsersIcon
   },
   {
     title: 'Leaderboard',
     url: '/leaderboard',
     icon: Medal
-    // icon: RankingOutline
   },
   {
     title: 'Inbox',

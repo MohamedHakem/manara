@@ -1,6 +1,6 @@
 'use client';
 
-import { Earth, SquareArrowOutUpRight, type LucideIcon } from 'lucide-react';
+import { SquareArrowOutUpRight, type LucideIcon } from 'lucide-react';
 import { ComponentPropsWithoutRef, Dispatch, SetStateAction } from 'react';
 
 import { Separator } from '@/components/ui/separator';
@@ -16,6 +16,7 @@ import activity from 'react-useanimations/lib/activity';
 import { cn, isActiveTab } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { AnimatedUsersIcon } from './icons/animated-users-icon';
 
 export function NavSecondary({
   items,
@@ -41,18 +42,26 @@ export function NavSecondary({
     title: 'Manara Community',
     url: 'https://thisismanara.circle.so',
     itemType: 'external',
-    icon: Earth
+    // icon: Earth
+    icon: AnimatedUsersIcon
   };
 
-  console.log(
-    'nav-secondary ~ isActiveTab(items[0].url, pathname): ',
-    ', pathname: ',
-    pathname,
-    ', items[0].url: ',
-    items[0].url,
-    ', result: ',
-    isActiveTab(items[0].url, pathname)
-  );
+  const leaderboard = {
+    title: 'Leaderboard',
+    url: '/leaderboard',
+    icon: AnimatedUsersIcon
+  };
+
+
+  // console.log(
+  //   'nav-secondary ~ isActiveTab(items[0].url, pathname): ',
+  //   ', pathname: ',
+  //   pathname,
+  //   ', items[0].url: ',
+  //   items[0].url,
+  //   ', result: ',
+  //   isActiveTab(items[0].url, pathname)
+  // );
 
   return (
     <SidebarGroup {...props} className={isDrawer ? 'p-0' : ''}>
@@ -61,6 +70,7 @@ export function NavSecondary({
         <SidebarMenu className={isDrawer ? 'gap-0 grid grid-cols-[1.05fr_1fr] border rounded-2xl mt-1' : ''}>
           {/* in drawer or on mobile only: if index is 0, render the manaraCommunity item, otherwise render the rest */}
           {isDrawer && (
+            <>
             <SidebarMenuItem
               key={manaraCommunity.title}
               onClick={() => drawerOpen && drawerOpen(false)}
@@ -85,6 +95,30 @@ export function NavSecondary({
               </SidebarMenuButton>
               <Separator />
             </SidebarMenuItem>
+            <SidebarMenuItem
+              key={leaderboard.title}
+              onClick={() => drawerOpen && drawerOpen(false)}
+              className={'border-r'}
+            >
+              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
+                <Link
+                  href={leaderboard.url}
+                  className={cn(
+                    // isActiveTab(leaderboard.url, pathname) && 'text-orange-600',
+                    'flex items-center justify-between'
+                  )}
+                >
+                  <div className="flex gap-2 items-center justify-between">
+                    {/* <leaderboard.icon size={16} /> */}
+                    <UseAnimations animation={activity} color="#ea580c" />
+                    <span>{leaderboard.title}</span>
+                  </div>
+                </Link>
+              </SidebarMenuButton>
+              <Separator />
+            </SidebarMenuItem>
+          
+          </>
           )}
 
           {items.map((item, index) => (

@@ -15,7 +15,7 @@ export default async function LearningPathPage(props: { params: Promise<{ trackS
   const { trackSlug } = params;
   // get the title from the trackSlug
   const track = tracks.filter((track) => `${trackSlug}` === track.slug)
-  console.log("🚀 ~ LearningPathPage ~ track:", track)
+  // console.log("🚀 ~ LearningPathPage ~ track:", track)
 
   return (
     <>

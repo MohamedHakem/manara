@@ -2,8 +2,9 @@ import { YouTubeEmbed } from '@next/third-parties/google';
 // import { Lightbulb } from 'lucide-react';
 import { FcIdea } from 'react-icons/fc';
 
-export default function LessonContent({ slug }: { slug: string }) {
-  console.log('🚀 ~ LessonContent ~ slug:', slug);
+// export default function LessonContent({ slug }: { slug: string }) {
+export default function LessonContent() {
+    // console.log('🚀 ~ LessonContent ~ slug:', slug);
   const videoId = '5Tox7WqP3QQ'; // get this from db by lesson slug
   // if you want to start the video from 10 seconds and end at 30 seconds, or more params
   // const videoParams = 'controls=0&start=10&end=30';

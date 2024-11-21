@@ -2,7 +2,7 @@ import { coursesByTrack, lessonsByModule, modulesByCourse, tracks } from "@/lib/
 import { DataTypeMap, TypeOptions } from "@/lib/types";
 
 export default function getChildrenByTypeAndSlug<T extends TypeOptions>(type: T, slug: string): DataTypeMap[TypeOptions][] {
-  console.log("🚀 ~ getChildrenByTypeAndSlug ~ type, slug:", type, ", ", slug)
+  // console.log("🚀 ~ getChildrenByTypeAndSlug ~ type, slug:", type, ", ", slug)
   // fetch here using the type & slug, for now use static data
   const Map = {
     learn: () => tracks, // a func that returns all tracks for /learn page

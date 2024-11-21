@@ -1,14 +1,14 @@
 export default function DefaultSkeleton() {
   return (
-    <div className="w-full max-w-[52rem] mx-auto fade-in-40 fade-out-40">
+    <div className="w-full fade-in-40 fade-out-40">
       {/* Header Skeleton */}
       <header className="flex items-center gap-4 p-4 border-b">
         <div className="h-8 w-8 rounded-full bg-gray-200 animate-pulse" />
-        <div className="h-6 w-48 bg-gray-200 rounded animate-pulse" />
+        <div className="max-w-[52rem] mx-auto h-6 w-48 bg-gray-200 rounded animate-pulse" />
       </header>
 
       {/* Content Skeleton */}
-      <div className="p-4 space-y-6">
+      <div className="max-w-[52rem] mx-auto p-4 space-y-6">
         {/* Hero Section */}
         <div className="h-48 bg-gray-200 rounded-lg animate-pulse" />
 
