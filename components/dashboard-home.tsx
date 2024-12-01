@@ -112,7 +112,7 @@ export default function DashboardHome() {
 
         {/* Upcoming Events */}
         <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-2">
             <h2 className="text-xl font-bold">Upcoming events</h2>
             {/* <Button variant="link">View all</Button> */}
           </div>
@@ -123,13 +123,13 @@ export default function DashboardHome() {
                 title: 'Webinar: AWS 1 - Intro to Cloud Computing',
                 date: 'Dec 2',
                 time: '7:00 PM',
-                attending: '172 going',
+                attending: '175 going',
                 type: 'FREE EVENT'
               }
             ].map((event, i) => (
               <Card key={i}>
                 <CardContent className="p-4">
-                  <Badge variant="secondary" className="mb-2">
+                  <Badge variant="secondary" className="mb-2 bg-[#ff773b] px-2 py-1 text-white">
                     {event.type}
                   </Badge>
                   <h3 className="font-semibold mb-2">{event.title}</h3>

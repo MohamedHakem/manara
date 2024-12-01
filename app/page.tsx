@@ -60,7 +60,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 my-4 px-4 w-full lg:w-[48rem] xl:w-[56rem] md:max-w-4xl mx-auto">
           {tiles.map((tile) => (
             <div key={tile.title} className="flex items-center justify-center h-48 rounded-2xl bg-zinc-100">
-              <div className="text-2xl md:text-7xl font-semibold text-zinc-300">{tile.title}</div>
+              <div className="text-2xl md:text-5xl font-semibold text-zinc-300">{tile.title}</div>
             </div>
           ))}
         </div>
