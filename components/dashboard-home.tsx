@@ -1,15 +1,16 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
+// import Image from 'next/image';
 import WelcomeProgress from './dashboard-homepage/welcome-progress';
 import WidgetsSidebar from './dashboard-homepage/widgets-sidebar';
 import StreakTracker from './dashboard-homepage/strike-tracker';
+import Link from 'next/link';
 
 export default function DashboardHome() {
   return (
     <div className="flex min-h-screen bg-background">
-      <main className="flex flex-col flex-1 px-2 gap-5">
+      <main className="flex flex-col flex-1 px-2 gap-6">
         {/* Welcome Section */}
         <WelcomeProgress showOnMobile />
 
@@ -17,9 +18,9 @@ export default function DashboardHome() {
         <StreakTracker showOnMobile />
 
         {/* Continue Learning Section */}
-        <section className="mb-8">
-          <div className="flex items-start justify-between mb-6">
-            <div>
+        <section>
+          <div className="flex items-start justify-between w-full">
+            <div className="w-full">
               <div className="flex items-center gap-2 mb-2">
                 <Badge variant="ghost" className="text-green-500 flex gap-2 items-center border-0 pl-1">
                   <div className="relative w-3 h-3">
@@ -30,24 +31,29 @@ export default function DashboardHome() {
                 </Badge>
                 {/* <span className="text-sm text-muted-foreground">Course</span> */}
               </div>
-              <h1 className="text-2xl font-bold mb-2">You don&apos;t have any active courses</h1>
-              <p className="text-muted-foreground mb-4">Select a course and start improving your skills.</p>
-              <div className="flex items-center gap-4">
-                <Button className="bg-indigo-600 hover:bg-indigo-700">Browse courses</Button>
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3].map((i) => (
-                      <Image
-                        key={i}
-                        src="/public/images/avatars/hakem-pfp.jpg"
-                        alt="User"
-                        width={24}
-                        height={24}
-                        className="rounded-full border-2 border-background"
-                      />
-                    ))}
+              
+              <div className="border rounded-xl p-4">
+                <h1 className="text-xl font-bold mb-2">You don&apos;t have any active courses</h1>
+                <p className="text-muted-foreground mb-4 text-sm">Select a course and start learning now!</p>
+                <div className="flex flex-col items-center gap-4">
+                  <Link href="/learn" className="w-full">
+                    <Button className="bg-[#ff773b] text-white" text={'Browse courses'} size={'lg'} />
+                  </Link>
+                  <div className="flex flex-col items-center gap-2">
+                    {/* <div className="flex -space-x-2">
+                      {[1, 2, 3].map((i) => (
+                        <Image
+                          key={i}
+                          src="/public/images/avatars/hakem-pfp.jpg"
+                          alt="User"
+                          width={24}
+                          height={24}
+                          className="rounded-full border-2 border-background"
+                        />
+                      ))}
+                    </div> */}
+                    <span className="text-sm text-muted-foreground">7,982 learning this week</span>
                   </div>
-                  <span className="text-sm text-muted-foreground">7,982 learning this week</span>
                 </div>
               </div>
             </div>
@@ -55,7 +61,7 @@ export default function DashboardHome() {
         </section>
 
         {/* Recommended Courses */}
-        <section className="mb-8">
+        {/* <section className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">Recommended for you</h2>
             <Button variant="link">View all</Button>
@@ -102,28 +108,22 @@ export default function DashboardHome() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </section> */}
 
         {/* Upcoming Events */}
         <section className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">Upcoming events</h2>
-            <Button variant="link">View all</Button>
+            {/* <Button variant="link">View all</Button> */}
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          {/* <div className="grid md:grid-cols-2 gap-4"> */}
+          <div className="grid grid-cols-1">
             {[
               {
-                title: 'Webinar: Why Your Entire Team Needs to Care About UX',
-                date: 'Nov 26',
-                time: '6:00 PM',
-                attending: '275 going',
-                type: 'FREE EVENT'
-              },
-              {
-                title: 'Focus & Connect: Co-working Session',
-                date: 'Nov 27',
-                time: '2:00 PM',
-                attending: '16 going',
+                title: 'Webinar: AWS 1 - Intro to Cloud Computing',
+                date: 'Dec 2',
+                time: '7:00 PM',
+                attending: '172 going',
                 type: 'FREE EVENT'
               }
             ].map((event, i) => (
@@ -147,7 +147,7 @@ export default function DashboardHome() {
         </section>
 
         {/* Career Quiz Section */}
-        <section className="mb-8">
+        {/* <section className="mb-8">
           <Card>
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
@@ -164,16 +164,16 @@ export default function DashboardHome() {
               </div>
             </CardContent>
           </Card>
-        </section>
+        </section> */}
 
         {/* Resources */}
-        <section>
+        {/* <section>
           <h2 className="text-xl font-bold mb-4">Resources</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { title: 'Discord Community', icon: 'discord' },
-              { title: 'Reddit Community', icon: 'reddit' },
-              { title: 'Uxcel Events', icon: 'calendar' },
+              { title: 'Circle Community', icon: 'discord' },
+              // { title: 'Reddit Community', icon: 'reddit' },
+              // { title: 'Uxcel Events', icon: 'calendar' },
               { title: 'Figma Resources', icon: 'figma' }
             ].map((resource, i) => (
               <Card key={i} className="hover:bg-accent transition-colors cursor-pointer">
@@ -183,7 +183,7 @@ export default function DashboardHome() {
               </Card>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Sidebar */}
