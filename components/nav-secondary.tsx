@@ -1,6 +1,6 @@
 'use client';
 
-import { SquareArrowOutUpRight, type LucideIcon } from 'lucide-react';
+import { Inbox, SquareArrowOutUpRight, type LucideIcon } from 'lucide-react';
 import { ComponentPropsWithoutRef, Dispatch, SetStateAction } from 'react';
 
 import { Separator } from '@/components/ui/separator';
@@ -38,6 +38,7 @@ export function NavSecondary({
   iconColor?: string;
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
+
   const manaraCommunity = {
     title: 'Manara Community',
     url: 'https://thisismanara.circle.so',
@@ -52,6 +53,11 @@ export function NavSecondary({
     icon: AnimatedUsersIcon
   };
 
+  const inbox = {
+    title: 'Inbox',
+    url: '/inbox',
+    icon: Inbox
+  };
 
   // console.log(
   //   'nav-secondary ~ isActiveTab(items[0].url, pathname): ',
@@ -71,54 +77,71 @@ export function NavSecondary({
           {/* in drawer or on mobile only: if index is 0, render the manaraCommunity item, otherwise render the rest */}
           {isDrawer && (
             <>
-            <SidebarMenuItem
-              key={manaraCommunity.title}
-              onClick={() => drawerOpen && drawerOpen(false)}
-              className={'border-r'}
-            >
-              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
-                <Link
-                  href={manaraCommunity.url}
-                  className={cn(
-                    // isActiveTab(manaraCommunity.url, pathname) && 'text-orange-600',
-                    'flex items-center justify-between'
-                  )}
-                >
-                  <div className="flex gap-2 items-center justify-between">
-                    {/* <manaraCommunity.icon size={16} /> */}
-                    <UseAnimations animation={activity} color="#ea580c" />
-                    <span>{manaraCommunity.title}</span>
-                  </div>
-                  {!!manaraCommunity.itemType ? <SquareArrowOutUpRight color="#818181" /> : null}
-                  {/* {!!manaraCommunity.itemType ? <UseAnimations  animation={activity} color='#818181' /> : null} */}
-                </Link>
-              </SidebarMenuButton>
-              <Separator />
-            </SidebarMenuItem>
-            <SidebarMenuItem
-              key={leaderboard.title}
-              onClick={() => drawerOpen && drawerOpen(false)}
-              className={'border-r'}
-            >
-              <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
-                <Link
-                  href={leaderboard.url}
-                  className={cn(
-                    // isActiveTab(leaderboard.url, pathname) && 'text-orange-600',
-                    'flex items-center justify-between'
-                  )}
-                >
-                  <div className="flex gap-2 items-center justify-between">
-                    {/* <leaderboard.icon size={16} /> */}
-                    <UseAnimations animation={activity} color="#ea580c" />
-                    <span>{leaderboard.title}</span>
-                  </div>
-                </Link>
-              </SidebarMenuButton>
-              <Separator />
-            </SidebarMenuItem>
-          
-          </>
+              <SidebarMenuItem
+                key={manaraCommunity.title}
+                onClick={() => drawerOpen && drawerOpen(false)}
+                className={'border-r'}
+              >
+                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
+                  <Link
+                    href={manaraCommunity.url}
+                    className={cn(
+                      // isActiveTab(manaraCommunity.url, pathname) && 'text-orange-600',
+                      'flex items-center justify-between'
+                    )}
+                  >
+                    <div className="flex gap-2 items-center justify-between">
+                      {/* <manaraCommunity.icon size={16} /> */}
+                      <UseAnimations animation={activity} color="#ea580c" />
+                      <span>{manaraCommunity.title}</span>
+                    </div>
+                    {!!manaraCommunity.itemType ? <SquareArrowOutUpRight color="#818181" /> : null}
+                    {/* {!!manaraCommunity.itemType ? <UseAnimations  animation={activity} color='#818181' /> : null} */}
+                  </Link>
+                </SidebarMenuButton>
+                <Separator />
+              </SidebarMenuItem>
+              <SidebarMenuItem
+                key={leaderboard.title}
+                onClick={() => drawerOpen && drawerOpen(false)}
+                // className={'border-r'}
+              >
+                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
+                  <Link
+                    href={leaderboard.url}
+                    className={cn(
+                      // isActiveTab(leaderboard.url, pathname) && 'text-orange-600',
+                      'flex items-center justify-between'
+                    )}
+                  >
+                    <div className="flex gap-2 items-center justify-between">
+                      {/* <leaderboard.icon size={16} /> */}
+                      <UseAnimations animation={activity} color="#ea580c" />
+                      <span>{leaderboard.title}</span>
+                    </div>
+                  </Link>
+                </SidebarMenuButton>
+                <Separator />
+              </SidebarMenuItem>
+              <SidebarMenuItem key={inbox.title} onClick={() => drawerOpen && drawerOpen(false)} className={'border-r'}>
+                <SidebarMenuButton asChild size={isDrawer ? 'lg' : 'sm'} className={isDrawer ? 'py-1 h-11' : ''}>
+                  <Link
+                    href={inbox.url}
+                    className={cn(
+                      // isActiveTab(leaderboard.url, pathname) && 'text-orange-600',
+                      'flex items-center justify-between'
+                    )}
+                  >
+                    <div className="flex gap-2 items-center justify-between">
+                      <inbox.icon size={20} color={iconColor} />
+                      {/* <UseAnimations animation={activity} color="#ea580c" /> */}
+                      <span>{inbox.title}</span>
+                    </div>
+                  </Link>
+                </SidebarMenuButton>
+                <Separator />
+              </SidebarMenuItem>
+            </>
           )}
 
           {items.map((item, index) => (
@@ -138,7 +161,8 @@ export function NavSecondary({
                   href={`${item.url}`}
                   className={cn(
                     // isActiveTab(item.url, pathname) && 'text-orange-600 hover:text-orange-600 gap-3 bg-[#ffa50024]'
-                    isActiveTab(item.url, pathname) && 'hover:text-orange-600 bg-[#e5e5e580] font-semibold [&_svg]:stroke-slate-900',
+                    isActiveTab(item.url, pathname) &&
+                      'hover:text-orange-600 bg-[#e5e5e580] font-semibold [&_svg]:stroke-slate-900',
                     `gap-3 [&_svg]:size-${iconSize || '4'}`
                   )}
                 >
