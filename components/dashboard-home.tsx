@@ -6,11 +6,13 @@ import WelcomeProgress from './dashboard-homepage/welcome-progress';
 import WidgetsSidebar from './dashboard-homepage/widgets-sidebar';
 import StreakTracker from './dashboard-homepage/strike-tracker';
 import Link from 'next/link';
+import Image from 'next/image';
+import { events } from '@/data/events';
 
 export default function DashboardHome() {
   return (
-    <div className="flex min-h-screen bg-background">
-      <main className="flex flex-col flex-1 px-2 gap-6">
+    <div className="flex bg-background">
+      <main className="flex flex-col flex-1 px-2 gap-7 md:gap-7">
         {/* Welcome Section */}
         <WelcomeProgress showOnMobile />
 
@@ -31,8 +33,8 @@ export default function DashboardHome() {
                 </Badge>
                 {/* <span className="text-sm text-muted-foreground">Course</span> */}
               </div>
-              
-              <div className="border rounded-xl p-4">
+
+              <div className="border rounded-2xl p-4">
                 <h1 className="text-xl font-bold mb-2">You don&apos;t have any active courses</h1>
                 <p className="text-muted-foreground mb-4 text-sm">Select a course and start learning now!</p>
                 <div className="flex flex-col items-center gap-4">
@@ -40,18 +42,6 @@ export default function DashboardHome() {
                     <Button className="bg-[#ff773b] text-white" text={'Browse courses'} size={'lg'} />
                   </Link>
                   <div className="flex flex-col items-center gap-2">
-                    {/* <div className="flex -space-x-2">
-                      {[1, 2, 3].map((i) => (
-                        <Image
-                          key={i}
-                          src="/public/images/avatars/hakem-pfp.jpg"
-                          alt="User"
-                          width={24}
-                          height={24}
-                          className="rounded-full border-2 border-background"
-                        />
-                      ))}
-                    </div> */}
                     <span className="text-sm text-muted-foreground">7,982 learning this week</span>
                   </div>
                 </div>
@@ -111,34 +101,44 @@ export default function DashboardHome() {
         </section> */}
 
         {/* Upcoming Events */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-xl font-bold">Upcoming events</h2>
+        <section className="mb-4 border border-gray-200 rounded-2xl p-4 py-5 md:p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xl md:text-xl font-semibold">Manara events</h2>
             {/* <Button variant="link">View all</Button> */}
           </div>
           {/* <div className="grid md:grid-cols-2 gap-4"> */}
           <div className="grid grid-cols-1">
-            {[
-              {
-                title: 'Webinar: AWS 1 - Intro to Cloud Computing',
-                date: 'Dec 2',
-                time: '7:00 PM',
-                attending: '175 going',
-                type: 'FREE EVENT'
-              }
-            ].map((event, i) => (
-              <Card key={i}>
-                <CardContent className="p-4">
-                  <Badge variant="secondary" className="mb-2 bg-[#ff773b] px-2 py-1 text-white">
+            {events.map((event, i) => (
+              <Card key={i} className="border-0 shadow-none rounded-2xl overflow-hidden active:scale-100">
+                <div className="relative">
+                  <Image src={event.img} alt="hero" />
+                  <Badge
+                    variant="secondary"
+                    className="absolute top-3 left-3 md:top-5 md:left-5 bg-[#ff773b20] text-muted-foreground mb-2 px-1 md:px-1.5 py-0.5 md:py-1 text-[10px] md:text-xs font-normal"
+                  >
                     {event.type}
                   </Badge>
-                  <h3 className="font-semibold mb-2">{event.title}</h3>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span>{event.date}</span>
-                    <span>•</span>
-                    <span>{event.time}</span>
-                    <span>•</span>
-                    <span>{event.attending}</span>
+                </div>
+                <CardContent className="p-4 pt-3 md:p-4 border border-t-0 border-[#e5e7eb94] rounded-2xl rounded-t-none">
+                  <div className="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div className="flex flex-col h-11 w-full">
+                      <h3 className="font-semibold">{event.title}</h3>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>{event.date}</span>
+                        <span>•</span>
+                        <span>{event.time}</span>
+                        <span>•</span>
+                        <span>{event.attending}</span>
+                      </div>
+                    </div>
+                    <Link href={event.link} target="_blank" className="w-full md:w-fit mt-3">
+                      <Button
+                        variant={'outline'}
+                        text={'Watch'}
+                        size={'lg'}
+                        className="text-[#ff773b] bg-[#ff773b20] border-0 w-full md:w-28 shadow-none font-semibold"
+                      />
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
